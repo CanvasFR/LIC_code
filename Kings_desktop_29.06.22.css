@@ -30,13 +30,8 @@ body.course-menu-expanded:not(.ic-no-flex-layout):not(.embedded) .ic-Layout-cont
     padding: 10px 20px;
     margin: 0 0 0 auto;
     box-shadow: 0px 0px 65px 30px rgb(0 0 0 / 15%);
-} /*PAGE BANNER HEADING*/
-/*.pages.show .show-content a:visited {
-    color: #9A9A9A;
-}*/
-.pages.show .show-content a:hover {
-    /*color: #DB7F7F;*/
 }
+
 .pages.show .show-content a:active {
     color: #DB7F7F;
 }
@@ -122,15 +117,10 @@ li {
     margin: 3px;
 }
 
-
-ul li::marker{
-    /*color: red;*/
-    /*font-size: 1.5em;*/
-    /*list-style-type: square}*/
-}
 .user_content a:not(.btn):not(.Button):not(.ui-button):not(.ui-button.ui-state-hover):not(.ui-button.ui-state-focus):not(.ui-button.ui-state-disabled):not([role=button]), .mceContentBody a:not(.btn):not(.Button):not(.ui-button):not(.ui-button.ui-state-hover):not(.ui-button.ui-state-focus):not(.ui-button.ui-state-disabled):not([role=button]) {
-    text-decoration: none; !important;
+    text-decoration: none;
 }
+
 dt {
     color: #8431A6;
 }
