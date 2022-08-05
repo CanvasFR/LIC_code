@@ -414,14 +414,14 @@ body{
     max-width: 900px;
     padding-bottom: 50px;
     margin: 0 auto;
-    border: none; !important;
+    border: none; 
 }
 /*Discussion Width*/
 .topic .entry-content {
     max-width: 900px;
     padding-bottom: 50px;
     margin: 0 auto;
-    border: none; !important;
+    border: none; 
 }
 
 .ic-Layout-contentMain {
@@ -467,7 +467,7 @@ body{
 }
 
 .headerBar {
-    border: none; !important;
+    border: none;
 }
 
 .message_wrapper {
@@ -601,9 +601,7 @@ code, pre {
     margin: 10px 0 20px;
     color: #e23535;
 }
-.box_content_full p {
-    /*padding: 30px;*/
-}
+
 
 /*a.external:hover */
 .ui-icon-extlink, a.external:focus .ui-icon-extlink, a.external:active .ui-icon-extlink {
@@ -611,17 +609,21 @@ code, pre {
     display: none !important;
 }
 
+.ui-icon {
+    display: block !important;
+}
+
 
 
 
 
 /*======================== [LSE [London School of Economics]] BANNERS START ===========================*/
-img .img-banner {
+/*img .img-banner {
     /*display: block;*/
     /*margin: 0 auto;*/
     /*width: 100%;*/
-    /*padding-bottom: 50px;*/
-}
+    /*padding-bottom: 50px;
+}*/
 
 /*======================== [LSE [London School of Economics]] IMAGES START ===========================*/
 .pages.show .show-content img:not(.equation_image) {
@@ -649,12 +651,6 @@ img:not(.equation_image) {
 }
 .equation_image img{
     margin:0px;
-}
-
-img-fluid {
-    /*margin: 0 auto;*/
-    /*max-width: 100%;*/
-    /*padding-bottom: 30px !important;*/
 }
 
 
@@ -692,14 +688,14 @@ img:not(.equation_image) {
     max-width: 270px;
     min-width: 250px;
     height: 151px;
-    padding: 0; !important;
-    margin: 5px; !important;
+    padding: 0; 
+    margin: 5px; 
 }
 .pages.show .show-content .image__img {
     display: block;
     width: 100%;
 }
-.image__overlay {
+/*.image__overlay {
     /*position: absolute;*/
     /*cursor: pointer;*/
     /*top: 0;*/
@@ -714,8 +710,8 @@ img:not(.equation_image) {
     /*align-items: center;*/
     /*justify-content: center;*/
     /*opacity: 0;*/
-    /*transition: opacity 0.25s;*/
-}
+    /*transition: opacity 0.25s;
+}*/
 .image__overlay > * {
     transform: translateY(20px);
     transition: transform 0.25s;
@@ -808,7 +804,7 @@ span.image__description {
 }
 
 .pad-box-mega {
-    padding: 20px; !important;
+    padding: 20px;
     max-width: 950px;
     margin: 10px auto 20px;
 }
@@ -861,9 +857,9 @@ iframe {
     height: 100%;
     border: none;
 }
-.transcript-button {
-    /*margin: 15px auto 0;*/
-}
+/*.transcript-button {
+    /*margin: 15px auto 0;
+}*/
 .btn .transcript-button a {
     text-decoration: none;
 }
@@ -946,24 +942,24 @@ blockquote {
     padding: 0;
 }
 
-.active, .accordion {
+/*.active, .accordion {
     /*background-color: #dedede;*/
-    /*width: 100%;*/
-}
+    /*width: 100%;
+}*/
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .accordion:hover {
+/*.active, .accordion:hover {
     /*background-color: #dedede;*/
     /*border-radius: 3px 3px 0 0;*/
-    /*font-weight: 600;*/
-}
-.panel img {
+    /*font-weight: 600;
+}*/
+/*.panel img {
     /*display: block;*/
     /*float: none;*/
     /*width: 100%;*/
     /*height: auto;*/
     /*margin: 0 auto;*/
-    /*min-width: 300px;*/
-}
+    /*min-width: 300px;
+}*/
 .accordion:after, .accordions:after {
     content: '\002B'; /* Unicode character for "plus" sign (+) */
     color: #777;
@@ -978,35 +974,7 @@ blockquote {
     float: right;
     margin-left: 5px;
 }
-.accordion .active, .dot:hover {
-    /*background-color: #bfbfbf;*/
-}
-.accordion-demo {
-    /*background-color: #eee;*/
-    /*color: #444;*/
-    /*cursor: pointer;*/
-    /*width: 100%;*/
-    /*border: none;*/
-    /*text-align: left;*/
-    /*outline: none;*/
-    /*font-size: 15px;*/
-    /*transition: 0.4s;*/
-    /*padding: 8px;*/
-    /*border-radius: 6px;*/
-    /*background-color: #f1f2f4 !important;*/
-    /*margin-bottom: 10px;*/
-}
-.accordion-demo:hover {
-    /*background-color: #d4d7de !important;*/
-    /*border-color: #d4d7de !important;*/
-}
-.active, .active:hover{
-    /*border-color: #d4d7de !important;*/
-    /*background: #393D3E !important;*/
-    /*border-radius: 6px 6px 0 0;*/
-    /*color: #ffffff !important;*/
-    /*border-radius: 3px;*/
-}
+
 .ic-app-course-menu .active, .active:hover{
     border-color: #d4d7de !important;
     background: #F5F5F5 !important;
@@ -1019,33 +987,16 @@ blockquote {
 .ic-app-course-menu .active:after {
     color: transparent;
 }
-.accordion-demo:after {
-    /*content: '\002B';*/
-    /*color: #777;*/
-    /*font-weight: bold;*/
-    /*float: right;*/
-    /*margin-left: 5px;*/
-}
-.active:after {
-    /*content: "\2212";*/
-}
-.panel-demo {
-    /*padding: 0 18px;*/
-    /*background-color: white;*/
-    /*max-height: 0;*/
-    /*overflow: hidden;*/
-    /*transition: max-height 0.2s ease-out;*/
 
-}
 
 /*======================== [LSE [London School of Economics]] TABS START  ===========================*/
 .ui-tabs .ui-tabs-nav li.ui-tabs-active a {
     background-color: #E3E5E8;
     /*font-weight: 600;*/
 }
-.ui-tabs .ui-tabs-nav li a {
-    /*color: #393D3E*/
-}
+/*.ui-tabs .ui-tabs-nav li a {
+    /*color: #393D3E
+}*/
 .ui-tabs .ui-tabs-nav li a {
     padding: 10px 20px;
     color: #393D3E;
@@ -1076,11 +1027,11 @@ blockquote {
 
 
 /*======================== START BANNER ===========================*/
-.text-container {
+/*.text-container {
     /*position: relative;*/
-    /*color: white;*/
-}
-.text-container-bottom-left {
+    /*color: white;
+}*/
+/*.text-container-bottom-left {
     /*position: absolute;*/
     /*bottom: 8px;*/
     /*left: 16px;*/
@@ -1090,8 +1041,8 @@ blockquote {
     /*text-shadow: 0px 2px 10px #000;*/
     /*right: 0;*/
     /*padding: .5em 1em;*/
-    /*background-color: white;*/
-}
+    /*background-color: white;
+}*/
 /*======================== END BANNER ===========================*/
 
 /*======================== START TOPIC OVERVIEW ===========================*/
@@ -1899,7 +1850,6 @@ a.oes-ulo-link {
 .ui-dialog.ui-widget-content{
     width: 800px !important;
     /*height: 550px !important;*/
-!important;
     left: 0px !important;
     right: 0px !important;
     top: 20px !important;
