@@ -901,7 +901,7 @@ if (allPageImages.length > 0) {
             continue;
         }
         const imageContainer = document.createElement('span');
-        imageContainer.style.backgroundImage = `url(${allPageImages[i].src})`;
+        imageContainer.style.backgroundImage = url(allPageImages[i].src);
         imageContainer.className = 'image-hover-zoom';
         imageContainer.dataset.options = 'zoomPosition: inner';
 
