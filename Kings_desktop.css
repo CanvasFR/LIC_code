@@ -2195,7 +2195,7 @@ a.hover-fade * {
 
 .disabledCls{
     opacity:0.4;
-    cursor:none !IMPORTANT;
+    cursor:none;
 }
 
 .ui-tabs .ui-tabs-nav {
