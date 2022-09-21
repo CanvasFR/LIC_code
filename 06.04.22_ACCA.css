@@ -3,7 +3,8 @@
 /*#########################################   GLOBAL UNIVERSAL CHANGES   #######################################################################################################################################*/
 /*###############################################################################################################################################################################################################*/
 
-.screenreader-only, .screenreader-only-tool {
+.screenreader-only,
+.screenreader-only-tool {
     overflow: hidden !important;
     height: 0px !important;
 }
@@ -14,7 +15,6 @@
 
 /*======================== ACCA COURSE OVERVIEW START ===========================*/
 
-/*comment*/
 .container_overview {
     position: relative;
     border-radius: 2px;
@@ -23,16 +23,19 @@
     min-width: 200px;
     max-width: 200px;
 }
+
 .layout_overview_page {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .image_overview {
     display: block;
     width: 100%;
     height: auto;
 }
+
 .overlay_overview {
     position: absolute;
     bottom: 100%;
@@ -44,17 +47,19 @@
     height: 0;
     transition: .4s ease-in;
 }
+
 .container_overview:hover .overlay_overview {
     bottom: 0;
     height: 100%;
 }
+
 a.overlay_overview {
     text-decoration: none;
     color: #fff;
     font-weight: 600;
 }
+
 .text_overview_page {
-    /*color: white;*/
     font-size: 11pt;
     position: absolute;
     padding: 20px;
@@ -67,12 +72,14 @@ a.overlay_overview {
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
 .Module_header {
     background-color: #ebebeb;
     border-radius: 2px;
     padding: 10px;
     font-size: 14pt;
 }
+
 /*****End of Overview code********/
 
 
@@ -82,47 +89,55 @@ a.overlay_overview {
     padding: 10px;
     box-shadow: 0 0 8px -2px #A3A3A3;
 }
-.course-overview-card h2{
+
+.course-overview-card h2 {
     font-size: 22px;
     padding: 0;
     margin: 0;
     border: none;
 }
-.course-overview-card p{
+
+.course-overview-card p {
     padding: 0;
     font-size: 12px;
 }
-.course-overview-card span{
+
+.course-overview-card span {
     font-size: 12px;
     background-color: #E3E5E8;
     border-radius: 3px;
     padding: 2px 4px;
     margin: 0 2px;
 }
-.course-overview-card a[class*=icon-]:before, a[class^=icon-]:before {
+
+.course-overview-card a[class*=icon-]:before,
+a[class^=icon-]:before {
     color: black;
     margin: 0 5px;
     font-size: .9rem;
     padding: 0;
 }
-.course-overview-card hr{
+
+.course-overview-card hr {
     margin: 8px 0;
 }
 
 /*======================== MODULE OVERVIEW START ===========================*/
-.week-title{
+.week-title {
     background-color: #eeeeee;
     padding: 10px 15px;
     margin: 0;
     font-size: 18px;
 
 }
+
 .overview-items {
-    border-bottom:1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
     margin: 0;
     font-weight: normal;
     padding: 10px 15px;
 }
+
 .learn-tag {
     font-size: .9rem;
     padding: 2px;
@@ -136,6 +151,7 @@ a.overlay_overview {
     font-weight: normal;
 
 }
+
 .apply-tag {
     font-size: .9rem;
     padding: 2px;
@@ -149,6 +165,7 @@ a.overlay_overview {
     font-weight: normal;
 
 }
+
 .discuss-tag {
     font-size: .9rem;
     padding: 2px;
@@ -167,145 +184,179 @@ a.overlay_overview {
 .ic-app-header__logomark {
     margin: 15px;
 }
+
 .list-view a.active {
     padding-left: 15px;
 }
-select, textarea, input[type=text], input[type=password], input[type=datetime], input[type=datetime-local], input[type=date], input[type=month], input[type=time], input[type=week], input[type=number], input[type=email], input[type=url], input[type=search], input[type=tel], input[type=color], .uneditable-input {
+
+select,
+textarea,
+input[type=text],
+input[type=password],
+input[type=datetime],
+input[type=datetime-local],
+input[type=date],
+input[type=month],
+input[type=time],
+input[type=week],
+input[type=number],
+input[type=email],
+input[type=url],
+input[type=search],
+input[type=tel],
+input[type=color],
+.uneditable-input {
     height: 38px;
 }
+
 a.pages.active:after {
     color: transparent;
 }
+
 /*======================== END GLOBAL NAVIGATION ===========================*/
 
 /*======================== START BODY ===========================*/
 /*All Content*/
-body{
-    /*font-family: "Roboto", Arial, sans-serif;*/
-    /*font-family: "LatoWeb", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-    /*text-decoration: none;*/
+body {
     line-height: 1.8;
 }
+
 /*Page Width*/
 .pages.show .show-content {
     max-width: 900px;
     padding-bottom: 50px;
     margin: 0 auto;
 }
+
 /*Assignment Width*/
 #assignment_show .description.teacher-version {
     max-width: 900px;
     padding-bottom: 50px;
     margin: 0 auto;
-    border: none; 
+    border: none;
 }
+
 /*Discussion Width*/
 .topic .entry-content {
     max-width: 900px;
     padding-bottom: 50px;
     margin: 0 auto;
-    border: none; 
+    border: none;
 }
+
 .message_wrapper {
     max-width: 900px;
     margin: 0 auto;
 }
+
 .file_download_btn img {
-    display: none; 
+    display: none;
     height: 0;
     opacity: 0;
     visibility: hidden;
 }
+
 .list-view a.active {
     border: none;
 }
-/*.pages.show .show-content {
-    line-height: 1.6;
-}*/
-* {box-sizing:border-box}
+
+* {
+    box-sizing: border-box
+}
 
 /*###############################################################################################################################################################################################################*/
 /*#########################################   COURSE UNIVERSAL CHANGES   #######################################################################################################################################*/
 /*###############################################################################################################################################################################################################*/
 
 /*======================== [LSE [London School of Economics]] START TEXT ===========================*/
-/*Page Title*/
-/*.pages.show .show-content a:visited {
-    color: #6C757C;
-}*/
+
 .pages.show .show-content a:hover {
     text-decoration: underline;
 }
-/*.pages.show .show-content a:active {
-    color: #6C757C;
-}*/
+
 .pages.show .show-content .pages.show .page-title {
-    font-size: 30px; color: #393D3E; font-weight: bold;
-    /*font-size: 30px; color: #062D96; font-weight: bolder;*/
+    font-size: 30px;
+    color: #393D3E;
+    font-weight: bold;
 }
+
 h1 {
-    font-size: 30px; color: #393D3E; font-weight: bold;
+    font-size: 30px;
+    color: #393D3E;
+    font-weight: bold;
 }
+
 h2 {
-    /*padding-top: 15px;*/
-    font-size: 26px; color: #e30613; font-weight: bold;
-    border-bottom:1px solid #eeeeee;
+    font-size: 26px;
+    color: #e30613;
+    font-weight: bold;
+    border-bottom: 1px solid #eeeeee;
     margin-bottom: 16px;
     margin-top: 38px;
 }
+
 h3 {
-    /*padding-top: 15px;*/
-    font-size: 23px; color: #e30613; font-weight: bold;
+    font-size: 23px;
+    color: #e30613;
+    font-weight: bold;
     margin-top: 38px;
 
 }
+
 h4 {
-    /*padding-top: 15px;*/
-    font-size: 18px; color: #e30613; font-weight: bold;
+    font-size: 18px;
+    color: #e30613;
+    font-weight: bold;
     margin-top: 18px;
 }
+
 p {
     font-size: 16px;
     margin: 0 !important;
     padding: 8px 0 16px;
 }
+
 .pad-box p {
     padding: 8px 0;
 }
+
 .box_content p {
     padding: 8px 0;
 }
 
-ul, ol {
+ul,
+ol {
     padding-left: 10px;
     margin: 0 0 20px 25px;
 }
+
 li {
-    /*margin-bottom: .75em;*/
     font-size: 16px;
     margin: 3px;
 
 }
-/*ul li::marker{
-    color: red;
-    font-size: 1.5em;
-    list-style-type: square}
-}*/
-.user_content a:not(.btn):not(.Button):not(.ui-button):not(.ui-button.ui-state-hover):not(.ui-button.ui-state-focus):not(.ui-button.ui-state-disabled):not([role=button]), .mceContentBody a:not(.btn):not(.Button):not(.ui-button):not(.ui-button.ui-state-hover):not(.ui-button.ui-state-focus):not(.ui-button.ui-state-disabled):not([role=button]) {
-    text-decoration: none; 
+
+.user_content a:not(.btn):not(.Button):not(.ui-button):not(.ui-button.ui-state-hover):not(.ui-button.ui-state-focus):not(.ui-button.ui-state-disabled):not([role=button]),
+.mceContentBody a:not(.btn):not(.Button):not(.ui-button):not(.ui-button.ui-state-hover):not(.ui-button.ui-state-focus):not(.ui-button.ui-state-disabled):not([role=button]) {
+    text-decoration: none;
 }
+
 dt {
     color: #8431A6;
 }
-dt, dd {
-    /*line-height: 1.5;*/
+
+dt,
+dd {
     padding: 10px 0;
 }
 
 .background_grey {
     background-color: #E3E5E8;
 }
-#more {display: none;}
+
+#more {
+    display: none;
+}
 
 /*======================== [LSE [London School of Economics]] START TABLE ===========================*/
 table {
@@ -318,15 +369,21 @@ table {
 table p {
     padding: 4px;
 }
-.table, tr:hover {
+
+.table,
+tr:hover {
     background-color: #f8f9fa;
 }
-.table, th, tr, td {
+
+.table,
+th,
+tr,
+td {
     vertical-align: top !important;
-    /*font-size: 15px;*/
-    /*padding: 10px;*/
 }
-.user_content table:not([cellpadding]) td, .mceContentBody table:not([cellpadding]) td {
+
+.user_content table:not([cellpadding]) td,
+.mceContentBody table:not([cellpadding]) td {
     padding: 6px;
 }
 
@@ -335,10 +392,12 @@ table p {
     padding: 0;
     text-align: center;
 }
+
 .progress-negative {
     margin: 0;
     background-color: #EEEEEE;
 }
+
 .progress-color {
     background-color: #5C305E;
     color: #ffffff;
@@ -346,14 +405,15 @@ table p {
 }
 
 /*======================== [LSE [London School of Economics]] CODE START ===========================*/
-code, pre {
-    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+code,
+pre {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
     font-size: 16px;
     color: #b0b0b0;
     border-radius: 3px;
-    /*background-color: #1c1c1c;*/
     border: none;
 }
+
 pre {
     color: #797979;
     display: block;
@@ -361,7 +421,6 @@ pre {
     margin: 0;
     word-break: break-all;
     word-wrap: break-word;
-    /*line-height: 1.4;*/
 }
 
 /*======================== [LSE [London School of Economics]] ALERTS START ===========================*/
@@ -373,11 +432,14 @@ pre {
     font-size: 16px;
     color: #2B3942;
 }
-.box_heading a[class*=icon-]:before, a[class^=icon-]:before {
+
+.box_heading a[class*=icon-]:before,
+a[class^=icon-]:before {
     font-size: 1.1rem;
     color: black;
     margin: 0 10px;
 }
+
 .box_content {
     border: 1px solid #C6CDD1;
     padding: 10px;
@@ -386,35 +448,19 @@ pre {
 }
 
 /*======================== [LSE [London School of Economics]] BANNERS START ===========================*/
-/*img .img-banner {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    padding-bottom: 50px;
-}*/
+
 
 /*======================== [LSE [London School of Economics]] IMAGES START ===========================*/
 .pages.show .show-content img {
     display: block;
-    /*margin: 0 auto;*/
-    /*width: 100%; !important;*/
     height: auto;
-    /*max-width: 900px; !important;*/
 }
-
-/*img-fluid {
-    margin: 0 auto;
-    max-width: 100%;
-    padding-bottom: 30px !important;
-}*/
-
-
 
 /*======================== [LSE [London School of Economics]] LATEX START ===========================*/
 img:not(.equation_image) {
     vertical-align: middle;
-    /*display: block;*/
 }
+
 .equation_image {
     display: inline;
 }
@@ -425,6 +471,7 @@ img:not(.equation_image) {
     width: 100%;
     margin: 0 auto;
 }
+
 .module-overview {
     display: flex;
     flex-flow: wrap;
@@ -433,22 +480,26 @@ img:not(.equation_image) {
     max-width: 1200px;
     padding-bottom: 15px;
 }
+
 .module-overview-wrapper h3 {
     text-align: center;
     margin: 0 auto;
 }
+
 .module-tile {
     position: relative;
     max-width: 270px;
     min-width: 250px;
     height: 151px;
-    padding: 0; 
-    margin: 5px; 
+    padding: 0;
+    margin: 5px;
 }
+
 .image__img {
     display: block;
     width: 100%;
 }
+
 .image__overlay {
     position: absolute;
     cursor: pointer;
@@ -457,7 +508,6 @@ img:not(.equation_image) {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
-    /*line-height: 1em; !important;*/
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -466,24 +516,28 @@ img:not(.equation_image) {
     opacity: 0;
     transition: opacity 0.25s;
 }
-.image__overlay > * {
+
+.image__overlay>* {
     transform: translateY(20px);
     transition: transform 0.25s;
 }
+
 .image__overlay:hover {
     opacity: 1;
 }
-.image__overlay:hover > * {
+
+.image__overlay:hover>* {
     opacity: 1;
     transform: translateY(0);
 
 }
+
 span.image__title {
     font-size: 20px;
-    /*font-weight: bold;*/
     padding: 0 10px;
     display: block;
 }
+
 span.image__description {
     font-size: 16px;
     padding: 0 3px 10px 3px;
@@ -499,6 +553,7 @@ span.image__description {
 .topic-overview-list {
     display: block;
 }
+
 .topic-overview-list .overview-title {
     display: block;
     background: #EEEEEE;
@@ -508,6 +563,7 @@ span.image__description {
     font-weight: 600;
     text-transform: uppercase;
 }
+
 .topic-overview-list .row-content {
     display: flex;
     flex-direction: row;
@@ -515,6 +571,7 @@ span.image__description {
     justify-content: space-between;
     border-bottom: 0.0625rem solid #EEEEEE;
 }
+
 .topic-overview-list .block-yellow,
 .topic-overview-list .block-red,
 .topic-overview-list .block-clear,
@@ -533,18 +590,22 @@ span.image__description {
     margin: 0;
     margin-right: 2rem;
 }
+
 .topic-overview-list .block-red {
     background-color: #C3B5C5;
     border-color: #5C305E;
 }
+
 .topic-overview-list .block-blue {
     background-color: #D1E3F8;
     border-color: #55ACEE;
 }
+
 .topic-overview-list .block-clear {
     background-color: transparent;
     border-color: transparent;
 }
+
 .topic-overview-list .row-copy {
     -webkit-flex-grow: 1;
     flex-grow: 1;
@@ -562,6 +623,7 @@ span.image__description {
     max-width: 950px;
     margin: 10px auto 20px;
 }
+
 .pad-box-mega h4 {
     margin-top: 0px;
 }
@@ -571,12 +633,14 @@ video {
     width: 100% !important;
     height: auto !important;
 }
+
 .video-container {
     position: relative;
     width: 100%;
     overflow: hidden;
     padding-top: 56.25%;
 }
+
 .video_responsive-iframe {
     position: absolute;
     top: 0;
@@ -587,9 +651,11 @@ video {
     height: 100%;
     border: none;
 }
+
 .transcript-button {
     margin: 15px auto 0;
 }
+
 .btn .transcript-button a {
     text-decoration: none;
 }
@@ -600,7 +666,7 @@ blockquote {
     padding: 0 0 0 16px;
 }
 
-.blockquote{
+.blockquote {
     max-width: 600px;
     margin: 20px auto;
     padding: 25px;
@@ -609,13 +675,14 @@ blockquote {
     color: #1c1c1c;
     box-sizing: border-box;
 }
+
 .blockquote--bordered {
     border-left-width: 10px;
 }
+
 .blockquote_text {
     font-style: italic;
     font-size: 1.15em;
-    /*line-height: 1.5;*/
     margin: 0;
 }
 
@@ -625,12 +692,15 @@ blockquote {
     text-align: right;
     padding: 0 20px;
 }
+
 .blockquote_text--credit::before {
     content: "\2014\0020"
 }
+
 .blockquote_text:not(:last-child) {
     margin-bottom: 1em;
 }
+
 .blockquote--quoted::before {
     content: "\201C";
     font-size: 100px;
@@ -656,19 +726,16 @@ blockquote {
     margin-top: 10px;
     box-sizing: border-box;
 }
-/*.active, .accordion {
-    background-color: #dedede;
-    width: 100%;
-}*/
+
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .accordion:hover {
-    /*background-color: #dedede;*/
+.active,
+.accordion:hover {
     border-radius: 3px 3px 0 0;
     font-weight: 600;
 }
+
 /* Style the accordion panel. Note: hidden by default */
 .panel {
-    /* padding: 6px 14px; */
     background-color: #f8f9fa;
     overflow: hidden;
     border-radius: 0 0 3px 3px;
@@ -681,56 +748,57 @@ blockquote {
     height: 0;
     padding: 0;
 }
+
 .accordion:after {
-    content: '\002B'; /* Unicode character for "plus" sign (+) */
+    content: '\002B';
+    /* Unicode character for "plus" sign (+) */
     color: #777;
     font-weight: bold;
     float: right;
     margin-left: 5px;
 }
-.active:after{
-    content: "\2212"; /* Unicode character for "minus" sign (-) */
+
+.active:after {
+    content: "\2212";
+    /* Unicode character for "minus" sign (-) */
     color: #777;
     font-weight: bold;
     float: right;
     margin-left: 5px;
 }
-/*.accordion .active, .dot:hover {
-    background-color: #bfbfbf;
-}*/
 
 /*======================== [LSE [London School of Economics]] TABS START  ===========================*/
 .ui-tabs .ui-tabs-nav li.ui-tabs-active a {
     background-color: #E3E5E8;
     font-weight: 600;
 }
-/*.ui-tabs .ui-tabs-nav li a {
-    color: #393D3E
-}*/
+
 .ui-tabs .ui-tabs-nav li a {
     padding: 10px 20px;
     color: #393D3E;
     font-size: 16px;
 }
+
 .ui-tabs-anchor {
     color: black;
 }
+
 .ui-tabs-anchor:active {
     background-color: #f6f6f6;
     padding: 10px 20px;
 }
+
 .ui-tabs-panel:active {
     background-color: #f6f6f6;
     padding: 10px 20px;
 }
-.user_content a:not(.btn):not(.Button):not(.ui-button):not([role='button']), .mceContentBody a:not(.btn):not(.Button):not(.ui-button):not([role='button']) {
+
+.user_content a:not(.btn):not(.Button):not(.ui-button):not([role='button']),
+.mceContentBody a:not(.btn):not(.Button):not(.ui-button):not([role='button']) {
     text-decoration: none;
 }
 
 /*======================== [LSE [London School of Economics]] FLIP-CARD START  ===========================*/
-
-
-
 
 
 /*======================== START BANNER ===========================*/
@@ -738,6 +806,7 @@ blockquote {
     position: relative;
     color: white;
 }
+
 .text-container-bottom-left {
     position: absolute;
     bottom: 8px;
@@ -749,6 +818,7 @@ blockquote {
     right: 0;
     padding: .5em 1em;
 }
+
 /*======================== END BANNER ===========================*/
 
 /*======================== START TOPIC OVERVIEW ===========================*/
@@ -757,23 +827,13 @@ blockquote {
 
 /*======================== START OBJECTIVES ===========================*/
 .hover_sec {
-    /* background-color: #fff; */
     margin: 6px;
-    /* margin-left: 10px; */
-    /* margin-right: 10px; */
     padding: 1px 10px;
     border-radius: 3px;
-    /* border: 0.5px solid rgb(196, 194, 194); */
     background-color: #E3E5E8;
-    /* box-shadow: 1px 1px 10px 1px #c9c9c9; */
 }
+
 /*======================== END OBJECTIVES ===========================*/
-
-
-
-
-
-
 
 
 /*======================== PROGRESS BAR START ===========================*/
@@ -793,20 +853,14 @@ blockquote {
 /*_________ SPECIAL HEADING START _____________________________________________________________________________________________*/
 /*--------------------------------------------------------------------------------------------------------------------*/
 
-
-
-
-
 .background_grey {
     background-color: #E3E5E8;
 }
+
 .center-content {
     margin: 0 auto;
     align-content: center;
 }
-
-
-
 
 .output {
     background-color: #393D3E;
@@ -827,10 +881,6 @@ blockquote {
     margin: 0 20px;
 }
 
-
-
-
-
 /*_________ BUTTONS START ____________________________________________________________________________________________*/
 /*--------------------------------------------------------------------------------------------------------------------*/
 .fr-button {
@@ -850,27 +900,25 @@ blockquote {
     -webkit-user-select: none;
     user-select: none;
 }
+
 .fr-button:hover {
     background: #ffffff;
     color: #e30613;
 }
 
-.btn-primary, .Button--primary {
+.btn-primary,
+.Button--primary {
     background: #e30613;
 }
-.btn-primary, .Button--primary:hover {
+
+.btn-primary,
+.Button--primary:hover {
     background: #ffffff;
     color: #e30613;
 }
-/*.btn, .Button--modules {
-    width: 100%;
-    margin: 0 auto;
-}*/
 
+/*------# BEGINNING OF FLIP CARD ---------------------------------------------------------------------------------------------------------------------------*/
 
-
-
-<!--/*------# BEGINNING OF FLIP CARD ---------------------------------------------------------------------------------------------------------------------------*/-->
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
     background-color: transparent;
@@ -878,7 +926,8 @@ blockquote {
     height: 300px;
     border: 1px solid #f1f1f1;
     border-radius: 10px;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */
 }
 
 /* This container is needed to position the front and back side */
@@ -897,11 +946,13 @@ blockquote {
 }
 
 /* Position the front and back side */
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;
+    /* Safari */
     backface-visibility: hidden;
 }
 
@@ -924,7 +975,8 @@ blockquote {
     width: 300px;
     height: 300px;
     border: 1px solid #f1f1f1;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */
 }
 
 /* This container is needed to position the front and back side */
@@ -943,33 +995,36 @@ blockquote {
 }
 
 /* Position the front and back side */
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;
+    /* Safari */
     backface-visibility: hidden;
 }
 
 /**** Dialog widget ****/
 
-.ui-dialog.ui-widget-content{
+.ui-dialog.ui-widget-content {
     width: 800px !important;
-    /*height: 550px !important;*/
     left: 0px !important;
     right: 0px !important;
     top: 20px !important;
     margin: auto !important;
     margin-top: 10% !important;
 }
-@media only screen and (max-width: 600px){
-    .ui-dialog.ui-widget-content{
-        width:auto !important;
-        left:15px !important;
-        right:15px !important;
+
+@media only screen and (max-width: 600px) {
+    .ui-dialog.ui-widget-content {
+        width: auto !important;
+        left: 15px !important;
+        right: 15px !important;
     }
-    .ui-dialog .ui-dialog-content{
-        width:auto !important;
+
+    .ui-dialog .ui-dialog-content {
+        width: auto !important;
     }
 }
 
