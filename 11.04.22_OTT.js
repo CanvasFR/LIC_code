@@ -1,4 +1,4 @@
-window.onload = function() {    //loads with page to account for Canvas loading JS first
+window.onload = function () {    //loads with page to account for Canvas loading JS first
 
     //Global Javascript
 
@@ -22,40 +22,20 @@ window.onload = function() {    //loads with page to account for Canvas loading 
         });
     }
 
-
-    /*let accordion = document.getElementsByClassName("accordion");
-    let i;
-
-    for (i = 0; i < accordion.length; i++) {
-        accordion[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        let panel = this.nextElementSibling;
-        if (panel.style.maxHeight){
-        panel.style.maxHeight = null;
-        } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-        } 
-    });
-}*/
-   
-popupHeadingUpdate();
-initTab();
-initULOContent();
+    popupHeadingUpdate();
+    initTab();
+    initULOContent();
 
 }
 
 
-
-
-
-
-function popupHeadingUpdate(){
-    $(".transcript-button").click(function() {
+function popupHeadingUpdate() {
+    $(".transcript-button").click(function () {
         var _getHeading = $(this).attr("title");
         var _gethref = $(this).attr("href");
 
         //$('#mydialog').dialog('option','width',200);
-        setTimeout(function(){
+        setTimeout(function () {
             $(".ui-dialog .ui-dialog-titlebar span.ui-dialog-title").html(_getHeading);
             //$(".ui-dialog-content .ui-dialog-titlebar").find("span.ui-dialog-title").text('Transcript');
         }, 300);
@@ -74,7 +54,7 @@ function initULOContent() {
     }),
         $(".oes-ulo-link").each(function () {
             var _getTitle = $(this).attr("title");
-            _popupTxt =  getPopupTxt(_getTitle);
+            _popupTxt = getPopupTxt(_getTitle);
             var i = e;
             //$(this).attr("title", $(this).html()),
             $(this).attr("href", "#"),
@@ -111,9 +91,9 @@ function initULOContent() {
 
 // ******************************* LEARNING OUTCOMES ******************************* //
 // Get the modal
-function getPopupTxt(aCourse){
+function getPopupTxt(aCourse) {
     var _popText = "";
-    if(aCourse =="course0week0"){
+    if (aCourse == "course0week0") {
         _popText = "<p>Students who successfully complete this unit will be able to:</p><ol> " +
             "<li>description for LO1</li> " +
             "<li>description for LO2</li> " +
@@ -122,7 +102,7 @@ function getPopupTxt(aCourse){
             "<li>description for LO5.</li> " +
             "</ol>";
     }
-    else if(aCourse =="course1week1"){
+    else if (aCourse == "course1week1") {
         _popText = "<p></p><ol> " +
             "<li>Frame structured thinking and identify/define business problems</li> " +
             "<li>Define the role of data analysts and describe how they support the business</li> " +
@@ -135,7 +115,7 @@ function getPopupTxt(aCourse){
             "<li>Perform basic analysis in Excel (e.g. quick filter, quick sort ascending/descending) to answer business questions</li> " +
             "</ol>";
     }
-    else if(aCourse =="course1week2"){
+    else if (aCourse == "course1week2") {
         _popText = "<p></p><ol> " +
             "<li>Use formulas to filter, transform, and analyse data to achieve analysis objectives</li> " +
             "<li>Test the quality and validity of data and resolve issues</li> " +
@@ -145,7 +125,7 @@ function getPopupTxt(aCourse){
             "<li>Describe how Excel Add-ins can be used to extend functionality and support analysis objectives</li> " +
             "</ol>";
     }
-    else if(aCourse =="course1week3"){
+    else if (aCourse == "course1week3") {
         _popText = "<p></p><ol> " +
             "<li>Identify key business metrics to prepare operational dashboards\n</li> " +
             "<li>Import, prepare, modify, analyse and visualise data in Tableau\n</li> " +
@@ -155,7 +135,7 @@ function getPopupTxt(aCourse){
             "<li>Create effective dashboards that demonstrate understanding of best practice design considerations\n</li> " +
             "</ol>";
     }
-    else if(aCourse =="course1week4"){
+    else if (aCourse == "course1week4") {
         _popText = "<p></p><ol> " +
             "<li>Describe and model the structure of a database using entity relationship diagrams</li> " +
             "<li>Explain what a database is and why databases are valuable to a business</li> " +
@@ -166,14 +146,14 @@ function getPopupTxt(aCourse){
             "<li>Import various file types using SQL</li> " +
             "</ol>";
     }
-    else if(aCourse =="course1week5"){
+    else if (aCourse == "course1week5") {
         _popText = "<p></p><ol> " +
             "<li>Retrieve and combine information from a database by joining tables in SQL</li> " +
             "<li>Increase query speed using indices to easily locate data and increase efficiency in accessing ordered records</li> " +
             "<li>Write queries and combine SQL features to solve business problems</li> " +
             "</ol>";
     }
-    else if(aCourse =="course1week6"){
+    else if (aCourse == "course1week6") {
         _popText = "<p></p><ol> " +
             "<li>Assess stakeholder requirements and design dashboards to meet their needs</li> " +
             "<li>Evaluate and improve dashboard accessibility</li> " +
@@ -182,7 +162,7 @@ function getPopupTxt(aCourse){
             "<li>Identify and articulate ethical issues that can arise when conducting data analysis using personal information\n</li> " +
             "</ol>";
     }
-    else if(aCourse =="course2week1"){
+    else if (aCourse == "course2week1") {
         _popText = "<p></p><ol> " +
             "<li>Describe how Python is used to support data analysis used for business decision-making</li> " +
             "<li>Apply various data types, basic operators, Python functions, and control structures (if, for, while) and arguments to understand the data</li> " +
@@ -194,7 +174,7 @@ function getPopupTxt(aCourse){
             "<li>Create and update a repository on GitHub</li> " +
             "</ol>";
     }
-    else if(aCourse =="course2week2"){
+    else if (aCourse == "course2week2") {
         _popText = "<p></p><ol> " +
             "<li>Import CSV data and wrangle data using Python operations\n</li> " +
             "<li>Write codes to use Pandas operations such as reindexing, mapping, and sorting to explore and analyse data\n</li> " +
@@ -204,7 +184,7 @@ function getPopupTxt(aCourse){
             "<li>Describe stages in data management and expand on the analysis stage\n</li> " +
             "</ol>";
     }
-    else if(aCourse =="course2week3"){
+    else if (aCourse == "course2week3") {
         _popText = "<p></p><ol> " +
             "<li>Import CSV data and wrangle data using Python operations\n</li> " +
             "<li>Write codes to use Pandas operations such as reindexing, mapping, and sorting to explore and analyse data\n</li> " +
@@ -214,7 +194,7 @@ function getPopupTxt(aCourse){
             "<li>Describe stages in data management and expand on the analysis stage\n</li> " +
             "</ol>";
     }
-    else if(aCourse =="course2week4"){
+    else if (aCourse == "course2week4") {
         _popText = "<p></p><ol> " +
             "<li>Use Python plotting library to create a visualisation workflow</li> " +
             "<li>Create and improve visualisations in Python leveraging design principles to identify and communicate insights</li> " +
@@ -223,7 +203,7 @@ function getPopupTxt(aCourse){
             "<li>Export visualisations to file formats that can be shared</li> " +
             "</ol>";
     }
-    else if(aCourse =="supporting-content"){
+    else if (aCourse == "supporting-content") {
         _popText = "<p></p><ol> " +
             "<li>Evaluate decisions effectively to ensure important inflexion points are weighed as objectively as possible </li> " +
             "<li>Build a compelling personal brand to stand out to employers and recruiters</li> " +
@@ -268,7 +248,7 @@ function initInlineQuiz() {
         $(".oes-feedback, .oes-feedback-correct, .oes-feedback-incorrect").css("opacity", 1),
             $(".oes-feedback, .oes-feedback-correct, .oes-feedback-incorrect").fadeOut(0),
             $(".oes-feedback, .oes-feedback-correct, .oes-feedback-incorrect, .oes-quiz-buttons .reset-button").hide(),
-        n.data("oes-quiz-setting-separator") && (a.separator = n.data("oes-quiz-setting-separator"));
+            n.data("oes-quiz-setting-separator") && (a.separator = n.data("oes-quiz-setting-separator"));
         var r = 0,
             s = 0,
             l = 0;
@@ -294,11 +274,11 @@ function initInlineQuiz() {
                     setTimeout(function () {
                         n.on("click", o.links.checkBtn, function () {
                             l <= 0 &&
-                            ($(this).hide(0),
-                                $("> .oes-feedback", n).show("slow"),
-                                $(".oes-quiz-question", n).length == $(".oes-correct", n).length
-                                    ? $(n).find("> .oes-feedback-correct").show("slow")
-                                    : $(".oes-quiz-question", n).length == $(".oes-correct", n).length + $(".oes-incorrect", n).length && $(n).find("> .oes-feedback-incorrect").show("slow")),
+                                ($(this).hide(0),
+                                    $("> .oes-feedback", n).show("slow"),
+                                    $(".oes-quiz-question", n).length == $(".oes-correct", n).length
+                                        ? $(n).find("> .oes-feedback-correct").show("slow")
+                                        : $(".oes-quiz-question", n).length == $(".oes-correct", n).length + $(".oes-incorrect", n).length && $(n).find("> .oes-feedback-incorrect").show("slow")),
                                 $(o.links.resetBtn, n).show(0),
                                 (l = 0);
                         });
@@ -344,22 +324,22 @@ function initInlineQuiz() {
                                 $(".oes-feedback, .oes-feedback-correct, .oes-feedback-incorrect", i).fadeOut(0),
                                 a.length == r ? ($(i).removeClass("oes-incorrect"), $(i).addClass("oes-correct")) : ($(i).removeClass("oes-correct"), $(i).addClass("oes-incorrect")),
                                 $("> .oes-feedback", $(":checked", i).parent()).fadeIn("slow"),
-                            $(i).hasClass("no-feedback") ||
-                            (a.parent().addClass("oes-mc-correct"),
-                                $(":checked:not(:checked.true)", i).parent().addClass("oes-mc-incorrect"),
-                                $(".true:not(:checked)", i).parent().addClass("oes-mc-missed"),
-                                $("> .oes-correct-feedback", $(".oes-mc-correct", i).parent()).fadeIn("slow"),
-                                $("> .oes-incorrect-feedback", $(".oes-mc-incorrect", i).parent()).fadeIn("slow"),
-                                $("> .oes-feedback, > .oes-feedback-correct, > .oes-feedback-incorrect", i).fadeOut(0),
-                                a.length == r
-                                    ? ($("> .oes-feedback, > .oes-feedback-correct", i).fadeIn("slow"), $("> .oes-feedback-incorrect", i).fadeOut(0))
-                                    : ($("> .oes-feedback, > .oes-feedback-incorrect", i).fadeIn("slow"), $("> .oes-feedback-correct", i).fadeOut(0)));
+                                $(i).hasClass("no-feedback") ||
+                                (a.parent().addClass("oes-mc-correct"),
+                                    $(":checked:not(:checked.true)", i).parent().addClass("oes-mc-incorrect"),
+                                    $(".true:not(:checked)", i).parent().addClass("oes-mc-missed"),
+                                    $("> .oes-correct-feedback", $(".oes-mc-correct", i).parent()).fadeIn("slow"),
+                                    $("> .oes-incorrect-feedback", $(".oes-mc-incorrect", i).parent()).fadeIn("slow"),
+                                    $("> .oes-feedback, > .oes-feedback-correct, > .oes-feedback-incorrect", i).fadeOut(0),
+                                    a.length == r
+                                        ? ($("> .oes-feedback, > .oes-feedback-correct", i).fadeIn("slow"), $("> .oes-feedback-incorrect", i).fadeOut(0))
+                                        : ($("> .oes-feedback, > .oes-feedback-incorrect", i).fadeIn("slow"), $("> .oes-feedback-correct", i).fadeOut(0)));
                         } else l++;
                     }
                     l <= 0 && $(this).hide(0), $(o.links.resetBtn, n).show(0);
                 }
             }),
-        o.mc_questions.length > 0 && $(o.links.checkBtn, n).show(0),
+            o.mc_questions.length > 0 && $(o.links.checkBtn, n).show(0),
             $(o.links.tr, n).each(function () {
                 var e = $(this);
                 (s = 0),
@@ -408,12 +388,12 @@ function initInlineQuiz() {
                                     })
                                     .before("<div class='oes-feedback-context'>Your response:</div>")
                                 : r
-                                ? h.prop("disabled", "disable").filter(function () {
-                                    return !$(this).prev().hasClass("oes-feedback-context");
-                                })
-                                : (l++,
-                                n.find(".oes-quiz-textresponse").hasClass("no-blanks") &&
-                                (h.after("<span class='oes-feedback-incorrect'>This response is empty.</span>"), h.parent().find("span.oes-feedback-incorrect").css("opacity", 1).fadeIn()));
+                                    ? h.prop("disabled", "disable").filter(function () {
+                                        return !$(this).prev().hasClass("oes-feedback-context");
+                                    })
+                                    : (l++,
+                                        n.find(".oes-quiz-textresponse").hasClass("no-blanks") &&
+                                        (h.after("<span class='oes-feedback-incorrect'>This response is empty.</span>"), h.parent().find("span.oes-feedback-incorrect").css("opacity", 1).fadeIn()));
                         }
                         if (l <= 0) {
                             if ($(".oes-response-output", a).length > 0)
@@ -431,7 +411,7 @@ function initInlineQuiz() {
                     l <= 0 && $(this).hide(0), $(o.links.resetBtn, n).show(0);
                 }
             }),
-        o.tr_questions.length > 0 && $(o.links.checkBtn, n).show(0),
+            o.tr_questions.length > 0 && $(o.links.checkBtn, n).show(0),
             $(o.links.fib, n).each(function () {
                 s = 0;
                 var e = $(this);
@@ -441,17 +421,17 @@ function initInlineQuiz() {
                     e.attr("id", "oes-fibtf-q" + r), e.addClass(o.links.fibtf.replace(/\./g, ""));
                     for (var i = 0, n = t.length; i < n; i++) {
                         var l = t[i]
-                                .toString()
-                                .replace(/&nbsp;/g, " ")
-                                .replace("}", "")
-                                .replace("{", "")
-                                .split(a.separator)
-                                .map(function (e) {
-                                    return e.trim();
-                                })
-                                .sort(function (e, t) {
-                                    return t.length - e.length;
-                                }),
+                            .toString()
+                            .replace(/&nbsp;/g, " ")
+                            .replace("}", "")
+                            .replace("{", "")
+                            .split(a.separator)
+                            .map(function (e) {
+                                return e.trim();
+                            })
+                            .sort(function (e, t) {
+                                return t.length - e.length;
+                            }),
                             c = "<input id='oes-fibtf-q" + r + "s" + i + "' size='" + l[0].length + "' type='textfield' data-oes-answers='" + l.join(a.separator) + "'></input>";
                         e.html(e.html().replace(t[i], c));
                     }
@@ -483,18 +463,18 @@ function initInlineQuiz() {
                                     h.prop("disabled", "disable"), h.addClass("oes-fibtf-checked");
                                     for (
                                         var p = h
-                                                .data("oes-answers")
-                                                .toString()
-                                                .replace(/&nbsp;/g, " ")
-                                                .replace("}", "")
-                                                .replace("{", "")
-                                                .split(a.separator)
-                                                .map(function (e) {
-                                                    return e.trim();
-                                                }),
-                                            g = !0,
-                                            m = h,
-                                            v = $.inArray(h.val().toString().toLowerCase().trim(), p) >= 0 ? ".oes-feedback, .oes-feedback-correct" : ".oes-feedback, .oes-feedback-incorrect";
+                                            .data("oes-answers")
+                                            .toString()
+                                            .replace(/&nbsp;/g, " ")
+                                            .replace("}", "")
+                                            .replace("{", "")
+                                            .split(a.separator)
+                                            .map(function (e) {
+                                                return e.trim();
+                                            }),
+                                        g = !0,
+                                        m = h,
+                                        v = $.inArray(h.val().toString().toLowerCase().trim(), p) >= 0 ? ".oes-feedback, .oes-feedback-correct" : ".oes-feedback, .oes-feedback-incorrect";
                                         g;
 
                                     )
@@ -511,12 +491,12 @@ function initInlineQuiz() {
                         e == tempNumCorrect && e == tempNumIncorrect + tempNumCorrect
                             ? (s.removeClass("oes-incorrect"), s.addClass("oes-correct"))
                             : e > 0 && e > tempNumCorrect && e == tempNumIncorrect + tempNumCorrect && (s.removeClass("oes-correct"), s.addClass("oes-incorrect")),
-                        r <= 0 && (tempNumIncorrect <= 0 ? $(".oes-feedback, .oes-feedback-correct", s).show("slow") : $(".oes-feedback, .oes-feedback-incorrect", s).show("slow"));
+                            r <= 0 && (tempNumIncorrect <= 0 ? $(".oes-feedback, .oes-feedback-correct", s).show("slow") : $(".oes-feedback, .oes-feedback-incorrect", s).show("slow"));
                     }
                     l <= 0 && $(this).hide(0), $(o.links.resetBtn, n).show(0);
                 }
             }),
-        o.fibtf_questions.length > 0 && $(o.links.checkBtn, n).show(0),
+            o.fibtf_questions.length > 0 && $(o.links.checkBtn, n).show(0),
             $(o.links.fib, n).each(function () {
                 s = 0;
                 var i = $(this),
@@ -552,17 +532,17 @@ function initInlineQuiz() {
                                     $(".oes-feedback" + s + ", .oes-feedback-incorrect" + s, $(i)).fadeOut(0),
                                     e.addClass("oes-fib-selected"),
                                     $("#oes-feedback-" + a).remove(),
-                                $(this).parent().hasClass("no-feedback") ||
-                                (t.hasClass("true")
-                                    ? (e.after("<span id='oes-feedback-" + a + "' class='oes-feedback-correct oes-feedback-context'>&#x2713;</span>"),
-                                        $(".oes-feedback" + s + ", .oes-feedback-correct" + s, $(i)).fadeIn("slow"),
-                                        e.removeClass("oes-fib-incorrect"),
-                                        e.addClass("oes-fib-correct"))
-                                    : (e.after("<span id='oes-feedback-" + a + "' class='oes-feedback-incorrect oes-feedback-context'>&#x274c;&nbsp;" + r + "</span>"),
-                                        $(".oes-feedback" + s + ", .oes-feedback-incorrect" + s, $(i)).fadeIn("slow"),
-                                        e.removeClass("oes-fib-correct"),
-                                        e.addClass("oes-fib-incorrect")));
-                                for (var d = !0, u = e, h = t.hasClass("true") ? ".oes-feedback, .oes-feedback-correct" : ".oes-feedback, .oes-feedback-incorrect"; d; )
+                                    $(this).parent().hasClass("no-feedback") ||
+                                    (t.hasClass("true")
+                                        ? (e.after("<span id='oes-feedback-" + a + "' class='oes-feedback-correct oes-feedback-context'>&#x2713;</span>"),
+                                            $(".oes-feedback" + s + ", .oes-feedback-correct" + s, $(i)).fadeIn("slow"),
+                                            e.removeClass("oes-fib-incorrect"),
+                                            e.addClass("oes-fib-correct"))
+                                        : (e.after("<span id='oes-feedback-" + a + "' class='oes-feedback-incorrect oes-feedback-context'>&#x274c;&nbsp;" + r + "</span>"),
+                                            $(".oes-feedback" + s + ", .oes-feedback-incorrect" + s, $(i)).fadeIn("slow"),
+                                            e.removeClass("oes-fib-correct"),
+                                            e.addClass("oes-fib-incorrect")));
+                                for (var d = !0, u = e, h = t.hasClass("true") ? ".oes-feedback, .oes-feedback-correct" : ".oes-feedback, .oes-feedback-incorrect"; d;)
                                     u.next().is(".oes-feedback, .oes-feedback-incorrect, .oes-feedback-correct") ? (u.next().is(h) ? u.next().fadeOut(0).css("opacity", 1).fadeIn("slow") : u.next().fadeOut(0), (u = u.next())) : (d = !1);
                             } else e.removeClass("oes-fib-selected"), e.removeClass("oes-fib-correct"), e.removeClass("oes-fib-incorrect");
                             (tempNumTotal = $("select", i).length),
@@ -642,7 +622,7 @@ function initInlineQuiz() {
                                     f.hasClass("true")
                                         ? (h.after("<span id='oes-feedback-" + p + "' class='oes-feedback-correct'>&#x2713;</span>"), $(".oes-feedback" + m + ", .oes-feedback-correct" + m, $(c)).fadeIn("slow"), t++)
                                         : (h.after("<span id='oes-feedback-" + p + "' class='oes-feedback-incorrect'>&#x274c;&nbsp;" + g + "</span>"), $(".oes-feedback" + m + ", .oes-feedback-incorrect" + m, $(c)).fadeIn("slow"), i++);
-                                for (var v = !0, b = h, y = f.hasClass("true") ? ".oes-feedback, .oes-feedback-correct" : ".oes-feedback, .oes-feedback-incorrect"; v; )
+                                for (var v = !0, b = h, y = f.hasClass("true") ? ".oes-feedback, .oes-feedback-correct" : ".oes-feedback, .oes-feedback-incorrect"; v;)
                                     b.next().is(".oes-feedback, .oes-feedback-incorrect, .oes-feedback-correct") ? (b.next().is(y) && b.next().fadeOut(0).css("opacity", 1).fadeIn("slow"), (b = b.next())) : (v = !1);
                             }
                         }
@@ -654,7 +634,7 @@ function initInlineQuiz() {
                     }
                 o.match_questions.length > 0 && (l <= 0 && $(this).hide(0), $(o.links.resetBtn, n).show(0));
             }),
-        o.match_questions.length > 0 && $(o.links.checkBtn, n).show(0),
+            o.match_questions.length > 0 && $(o.links.checkBtn, n).show(0),
             (o.links.checklist = ".oes-quiz-checklist"),
             (o.checklist_questions = []),
             $(o.links.checklist, n).each(function () {
@@ -710,34 +690,34 @@ function initInlineQuiz() {
             }),
             e++;
     }),
-    jQuery.isFunction($.fn.shuffle) ||
-    ($.fn.shuffle = function () {
-        $.each(this.get(), function (e, t) {
-            var i = $(t),
-                n = i.children();
-            n.sort(function () {
-                return 0.5 - Math.random();
-            }),
-                i.empty(),
-                n.appendTo(i);
-        });
-    }),
+        jQuery.isFunction($.fn.shuffle) ||
+        ($.fn.shuffle = function () {
+            $.each(this.get(), function (e, t) {
+                var i = $(t),
+                    n = i.children();
+                n.sort(function () {
+                    return 0.5 - Math.random();
+                }),
+                    i.empty(),
+                    n.appendTo(i);
+            });
+        }),
         $(".oes-shuffle").shuffle();
 }
 initInlineQuiz();
 
-function initTab(){
+function initTab() {
     var acc = document.getElementsByClassName("accordion-demo");
     var i;
     for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function(){
+        acc[i].addEventListener("click", function () {
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
             panel.classList.remove("open");
-            if (panel.style.maxHeight){
+            if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;
                 panel.classList.remove("open");
-            }else{
+            } else {
                 panel.classList.add("open");
                 panel.style.maxHeight = panel.scrollHeight + "px";
             }
@@ -786,14 +766,14 @@ if (allPageImages.length > 0) {
 // ******************************* POPUP BLOCK ******************************* //
 ///popup code block
 var trigger = document.getElementById('popup');
-if(trigger){
+if (trigger) {
     var href = trigger.href;
     window.name = 'parent';
-    function popup(){
+    function popup() {
         var pop = window.open(href, 'popup', 'menubar=no, status=no, scrollbars=no, menubar=no, width=800, height=800');
         pop.focus();
     }
-    trigger.addEventListener('click', function(e) {
+    trigger.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
         popup();
@@ -808,8 +788,8 @@ var modal = document.getElementById("myModal");
 var img = document.getElementById("myImg");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
-if(img){
-    img.onclick = function(){
+if (img) {
+    img.onclick = function () {
         modal.style.display = "block";
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
@@ -820,8 +800,8 @@ if(img){
 var span = document.getElementsByClassName("close")[0];
 // When the user clicks on <span> (x), close the modal
 
-if(span){
-    span.onclick = function() {
+if (span) {
+    span.onclick = function () {
         modal.style.display = "none";
     }
 }
@@ -841,16 +821,16 @@ function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
 }
 function myFunction() {
     var dots = document.getElementsByClassName("dots");
@@ -870,9 +850,9 @@ function myFunction() {
 //document.getElementsByClassName("show-more-button").addEventListener("click", function() {
 //document.addEventListener('DOMContentLoaded', () => {
 
-document.querySelector('.show-more-button').addEventListener('click', function() {
+document.querySelector('.show-more-button').addEventListener('click', function () {
     // If text is shown less, then show complete
-    if(this.getAttribute('data-more') == 0) {
+    if (this.getAttribute('data-more') == 0) {
         this.setAttribute('data-more', 1);
         this.style.display = 'block';
         this.innerHTML = 'Read Less';
@@ -881,7 +861,7 @@ document.querySelector('.show-more-button').addEventListener('click', function()
         this.previousElementSibling.previousElementSibling.style.display = 'inline';
     }
     // If text is shown complete, then show less
-    else if(this.getAttribute('data-more') == 1) {
+    else if (this.getAttribute('data-more') == 1) {
         this.setAttribute('data-more', 0);
         this.style.display = 'inline';
         this.innerHTML = 'Read More';
