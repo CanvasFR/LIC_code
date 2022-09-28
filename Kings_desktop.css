@@ -637,7 +637,7 @@ a[class^=icon-]:before {
 
 .box_content_full .Button {
     margin: 10px 0 20px;
-    color: #e23535;
+    color: #000000;
 }
 
 
@@ -1936,7 +1936,7 @@ ol.order-list li.active-order {
 .SS-icon a[class*=icon-]:before,
 a[class^=icon-]:before {
     font-size: 2.5rem;
-    color: #ee0612;
+    color: #501491;
     margin: 0 10px;
 }
 
