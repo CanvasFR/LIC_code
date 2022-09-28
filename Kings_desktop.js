@@ -1,4 +1,4 @@
-window.onload = function() {    //loads with page to account for Canvas loading JS first
+window.onload = function () {    //loads with page to account for Canvas loading JS first
 
     //Global Javascript
 
@@ -43,19 +43,20 @@ window.onload = function() {    //loads with page to account for Canvas loading 
     initCarousels();
     //carouselsInit();
     initULOContent();
-    initInlineQuiz();
+    //getPopupTxt();
+
 
 }
 
 
 
-function popupHeadingUpdate(){
-    $(".transcript-button").click(function() {
+function popupHeadingUpdate() {
+    $(".transcript-button").click(function () {
         var _getHeading = $(this).attr("title");
         var _gethref = $(this).attr("href");
 
         //$('#mydialog').dialog('option','width',200);
-        setTimeout(function(){
+        setTimeout(function () {
             $(".ui-dialog .ui-dialog-titlebar span.ui-dialog-title").html(_getHeading);
             //$(".ui-dialog-content .ui-dialog-titlebar").find("span.ui-dialog-title").text('Transcript');
         }, 300);
@@ -63,23 +64,23 @@ function popupHeadingUpdate(){
 }
 
 
-function carouselsInit(){
+function carouselsInit() {
     let currentSlide = 0, theSlides = document.getElementsByClassName('widget_media_image'), customSliderTimer, next, prev, theWrapper = document.getElementById('my-custom-slider-demo');
     function customNavToNextSlide() {
-        next = ( currentSlide < theSlides.length - 1 ) ? currentSlide + 1 : 0;
+        next = (currentSlide < theSlides.length - 1) ? currentSlide + 1 : 0;
         customSetCurrentSlide(next);
     }
     function customNavToPrevSlide() {
-        prev = ( currentSlide > 0 ) ? currentSlide - 1 : theSlides.length - 1;
+        prev = (currentSlide > 0) ? currentSlide - 1 : theSlides.length - 1;
         customSetCurrentSlide(prev);
     }
     function customSetCurrentSlide(to) {
         clearInterval(customSliderTimer);
-        for (let i = 0; i < theSlides.length; i ++) {
-            if ( currentSlide == i ) {
+        for (let i = 0; i < theSlides.length; i++) {
+            if (currentSlide == i) {
                 theSlides[currentSlide].classList.remove('active');
             }
-            if ( next == i ) {
+            if (next == i) {
                 theSlides[to].classList.add('active');
             }
         }
@@ -87,23 +88,23 @@ function carouselsInit(){
         customSliderStart();
     }
     function customSliderStart() {
-        customSliderTimer = setInterval(function() {
+        customSliderTimer = setInterval(function () {
             customNavToNextSlide();
         }, 5000);
     }
-    function customSliderInit(){
+    function customSliderInit() {
         let height = theSlides[0].getElementsByClassName("slidercnt").height;
         console.log(theSlides[0].getElementsByClassName("slidercnt")[0].height);
         //let height = theSlides[0].height;
         theWrapper.style.height = height + 'px';
-        for (let i = 0; i < theSlides.length; i ++) {
+        for (let i = 0; i < theSlides.length; i++) {
             theSlides[i].style.height = height + 'px';
         }
     }
     if (typeof theSlides !== 'undefined') {
         window.addEventListener('resize', customSliderInit);
         customSliderInit();
-        if ( theSlides.length > 1 ) {
+        if (theSlides.length > 1) {
             customSliderStart();
         }
     }
@@ -119,7 +120,7 @@ function initCarousels() {
                 $(this).context.clientHeight, $(".oes-carousels-bottom-nav").height();
             }),
                 e++,
-            0 == $(this).find("> ul").length)
+                0 == $(this).find("> ul").length)
         ) {
             $(this).prepend('<ul class="oes-carousel-bottom-nav"></ul>'),
                 $(this).prepend('<a class="oes-carousel-side-nav left leftArrow"><i class="icon-arrow-open-left"></i></a>'),
@@ -133,7 +134,7 @@ function initCarousels() {
                         $(this)
                             .parent()
                             .find("ul.oes-carousel-bottom-nav")
-                            .append('<li class="slider_'+t+' slider"><a data-section-select="' + t + '" class="dots" id="' + $(this).prop("id") + '" href="javascript:void(0)"></a></li>'),
+                            .append('<li class="slider_' + t + ' slider"><a data-section-select="' + t + '" class="dots" id="' + $(this).prop("id") + '" href="javascript:void(0)"></a></li>'),
                         $(this).wrapInner('<div class="oes-carousel-section-content"></div>');
                 }),
                 //$(this).tabs(),
@@ -147,60 +148,60 @@ function initCarousels() {
                     });
         }
 
-        $("#oes-carousel-1-section-"+curSlide).show();
+        $("#oes-carousel-1-section-" + curSlide).show();
         $(".oes-carousel ul.oes-carousel-bottom-nav li.slider_1").addClass("ui-tabs-active");
 
-        $(document).on("click", ".oes-carousel-side-nav", function(){
+        $(document).on("click", ".oes-carousel-side-nav", function () {
 
-            console.log("first "+curSlide);
+            console.log("first " + curSlide);
             var getLength = $("ul.oes-carousel-bottom-nav > li").length;
 
-            if($(this).hasClass("right")){
+            if ($(this).hasClass("right")) {
                 console.log("Right Arrow");
                 //if(!$(this).hasClass("disabledCls")){
-                if(curSlide == 1){
+                if (curSlide == 1) {
                     $(".oes-carousel-cnt").hide();
-                    console.log("first ",curSlide);
+                    console.log("first ", curSlide);
                     curSlide = parseInt(curSlide) + 1;
                     //$(".oes-carousel a.leftArrow").addClass("disabledCls");
                     //$(".oes-carousel a.rightArrow").removeClass("disabledCls");
-                    $("#oes-carousel-1-section-"+curSlide).show();
-                }else if((curSlide > 1) || (curSlide <= getLength)){
+                    $("#oes-carousel-1-section-" + curSlide).show();
+                } else if ((curSlide > 1) || (curSlide <= getLength)) {
                     $(".oes-carousel-cnt").hide();
-                    console.log("second ",curSlide)
+                    console.log("second ", curSlide)
 
-                    if(curSlide == getLength){
-                        console.log("second if ",curSlide);
+                    if (curSlide == getLength) {
+                        console.log("second if ", curSlide);
                         //$(".oes-carousel a.rightArrow").removeClass("disabledCls").addClass("disabledCls");
                         //$(".oes-carousel a.leftArrow").removeClass("disabledCls");
-                    }else{
+                    } else {
                         curSlide = parseInt(curSlide) + 1;
-                        console.log("second else ",curSlide);
+                        console.log("second else ", curSlide);
 
                         //$(".oes-carousel a.rightArrow").removeClass("disabledCls");
                         //$(".oes-carousel a.leftArrow").removeClass("disabledCls");
 
                     }
-                    $("#oes-carousel-1-section-"+curSlide).show();
+                    $("#oes-carousel-1-section-" + curSlide).show();
 
-                }else{
+                } else {
                     console.log("Right arrow else");
                 }
                 dotClass(parseInt(curSlide));
                 //}
-            }else if($(this).hasClass("left")){
+            } else if ($(this).hasClass("left")) {
                 //if(!$(this).hasClass("disabledCls")){
-                if(curSlide <= getLength){
-                    if(curSlide == 1){
+                if (curSlide <= getLength) {
+                    if (curSlide == 1) {
                         //$(".oes-carousel a.leftArrow").removeClass("disabledCls").addClass("disabledCls");
                         //$(".oes-carousel a.rightArrow").removeClass("disabledCls");
-                    }else{
+                    } else {
                         $(".oes-carousel-cnt").hide();
                         curSlide = parseInt(curSlide) - 1;
                         //$(".oes-carousel a.rightArrow").removeClass("disabledCls");
                         //$(".oes-carousel a.leftArrow").removeClass("disabledCls");
                     }
-                    $("#oes-carousel-1-section-"+curSlide).show();
+                    $("#oes-carousel-1-section-" + curSlide).show();
 
                 }
                 dotClass(parseInt(curSlide));
@@ -210,16 +211,16 @@ function initCarousels() {
             var t,
                 i = $(this).parent().find("ul.oes-carousel-bottom-nav > li").length,
                 n = $($(this).parent().find("ul.oes-carousel-bottom-nav > li.ui-state-active a")).data("section-select");
-				console.log(t,i,n)
+                console.log(t,i,n)
             $(this).hasClass("right") ? (t = n < i ? n + 1 : 1) : $(this).hasClass("left") && (t = 1 == n ? i : n - 1),
                 $(this)
                     .parent()
                     .find("> ul.oes-carousel-bottom-nav > li:nth-of-type(" + t + ") a")
                     .trigger("click");
-			*/
+            */
         });
 
-        $(document).on("click", ".oes-carousel-bottom-nav li a", function(){
+        $(document).on("click", ".oes-carousel-bottom-nav li a", function () {
             $(".oes-carousel-cnt").hide();
             var _getCurSlidNo = $(this).attr("data-section-select");
             var getSliderLen = $("ul.oes-carousel-bottom-nav > li").length;
@@ -235,14 +236,14 @@ function initCarousels() {
                 $(".oes-carousel a.leftArrow").removeClass("disabledCls");
                 $(".oes-carousel a.rightArrow").removeClass("disabledCls").addClass("disabledCls");
             } */
-            $("#oes-carousel-1-section-"+curSlide).show();
+            $("#oes-carousel-1-section-" + curSlide).show();
             dotClass(parseInt(curSlide));
         });
 
-        function dotClass(aNumber){
+        function dotClass(aNumber) {
             console.log(aNumber);
             $(".oes-carousel ul.oes-carousel-bottom-nav li.slider").removeClass("ui-tabs-active");
-            $(".oes-carousel ul.oes-carousel-bottom-nav li.slider_"+aNumber).addClass("ui-tabs-active");
+            $(".oes-carousel ul.oes-carousel-bottom-nav li.slider_" + aNumber).addClass("ui-tabs-active");
         }
     });
 }
@@ -281,7 +282,7 @@ function initULOContent() {
     }),
         $(".oes-ulo-link").each(function () {
             var _getTitle = $(this).attr("title");
-            _popupTxt =  getPopupTxt(_getTitle);
+            _popupTxt = getPopupTxt(_getTitle);
             var i = e;
             //$(this).attr("title", $(this).html()),
             $(this).attr("href", "#"),
@@ -314,13 +315,12 @@ function initULOContent() {
         }),
         $(".oes-ulo-list, .oes-ulo-link").css("visibility", "visible");
 }
-/*initULOContent();*/
 
 // ******************************* LEARNING OUTCOMES ******************************* //
 // Get the modal
-function getPopupTxt(aCourse){
-    var _popText = "";
-    if(aCourse =="course0week0"){
+function getPopupTxt(aCourse) {
+    //var _popText = "";
+    if (aCourse == "course0module0") {
         _popText = "<p>Students who successfully complete this unit will be able to:</p><ol> " +
             "<li>description for LO1</li> " +
             "<li>description for LO2</li> " +
@@ -329,264 +329,97 @@ function getPopupTxt(aCourse){
             "<li>description for LO5.</li> " +
             "</ol>";
     }
-    // Course 1
-    else if(aCourse =="course1"){
+    // Orientation Course
+    else if (aCourse == "orientationCourse") {
         _popText = "<p></p><ol> " +
-            "<li>Identify, source and perform basic cleansing on data from various, relevant sources to support required analysis processes</li> " +
-            "<li>Conduct exploratory and descriptive analytics</li> " +
-            "<li>Establish and utilise databases to support data management and analysis</li> " +
-            "<li>Prepare relevant insights to support business decision making, including identifying areas for further analysis and exploration</li> " +
-            "<li>Effectively communicate justified, relevant and useful insights to critical business stakeholders</li> " +
-            "<li>Identify appropriate opportunities for business value through data analytics processes</li> " +
+            "<li>CLO1: Create an Agile product roadmap using product management software.</li> " +
+            "<li>CLO2: Apply the principles of design thinking and UX design to create user-centric products that align with the product vision.</li> " +
+            "<li>CLO3: Critically analyse wireframes and prototypes to improve the user experience and visual design.</li> " +
+            "<li>CLO4: Select and use various testing methods to validate product design decisions.</li> " +
+            "<li>CLO5: Use prioritisation techniques to manage and refine the product backlog.</li> " +
+            "<li>CLO6: Adopt tailored communication strategies to manage varying stakeholders, requirements and product development phases.</li> " +
             "</ol>";
     }
-    else if(aCourse =="course1week1"){
+    else if (aCourse == "orientationWeek1") {
         _popText = "<p></p><ol> " +
-            "<li>Describe how the data analytics process and dashboards are used to inform business decision-making</li> " +
-            "<li>Leverage structured thinking frameworks to identify and understand problems and define analysis objectives</li> " +
-            "<li>Define the role of data analysts and describe how they support the business</li> " +
-            "<li>Describe the structure of a data table</li> " +
-            "<li>Describe the types of data analytics in the context of the data analytics maturity curve</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course1week2"){
-        _popText = "<p></p><ol> " +
-            "<li>Use formulas to filter, transform, and analyse data to achieve analysis objectives</li> " +
-            "<li>Test the quality and validity of data and resolve issues</li> " +
-            "<li>Use VLOOKUP in Excel to marry data together so that comparisons can be made</li> " +
-            "<li>Visualise data in Excel to aide exploratory analysis </li> " +
-            "<li>Create pivot tables to summarise, sort, reorganise, group, count, total or average data stored in a table</li> " +
-            "<li>Describe how Excel Add-ins can be used to extend functionality and support analysis objectives</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course1week3"){
-        _popText = "<p></p><ol> " +
-            "<li>Identify key business metrics to prepare operational dashboards\n</li> " +
-            "<li>Import, prepare, modify, analyse and visualise data in Tableau\n</li> " +
-            "<li>Organise and simplify data leveraging various fields in Tableau to enable logical and consistent analysis\n</li> " +
-            "<li>Select and create appropriate chart types based on organisational context \n</li> " +
-            "<li>Use visual analysis to forecast trends and inform the stakeholders about the gathered insights\n</li> " +
-            "<li>Create effective dashboards that demonstrate understanding of best practice design considerations\n</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course1week4"){
-        _popText = "<p></p><ol> " +
-            "<li>Describe and model the structure of a database using entity relationship diagrams</li> " +
-            "<li>Explain what a database is and why databases are valuable to a business</li> " +
-            "<li>Explain what SQL is and how it is used to support businesses</li> " +
-            "<li>Retrieve, filter, aggregate, and group data from a database using PostgreSQL</li> " +
-            "<li>Use SQL to test data validity and cleanse the data when issues are identified</li>" +
-            "<li>Use SQL to create and populate tables in a database</li> " +
-            "<li>Import various file types using SQL</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course1week5"){
-        _popText = "<p></p><ol> " +
-            "<li>Retrieve and combine information from a database by joining tables in SQL</li> " +
-            "<li>Increase query speed using indices to easily locate data and increase efficiency in accessing ordered records</li> " +
-            "<li>Write queries and combine SQL features to solve business problems</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course1week6"){
-        _popText = "<p></p><ol> " +
-            "<li>Assess stakeholder requirements and design dashboards to meet their needs</li> " +
-            "<li>Evaluate and improve dashboard accessibility</li> " +
-            "<li>Prepare strategies to deploy dashboards in an organisation (adoption and maintenance)\n</li> " +
-            "<li>Communicate actionable insights to stakeholders to enable decision-making\n</li> " +
-            "<li>Identify and articulate ethical issues that can arise when conducting data analysis using personal information\n</li> " +
-            "</ol>";
-    }
-    // Course 2
-    else if(aCourse =="course2"){
-        _popText = "<p></p><ol> " +
-            "<li>Utilise Python to collect and import large amounts of complex data through various approaches, including web scraping techniques and APIs</li> " +
-            "<li>Utilise Python to wrangle data for effective analysis\n</li> " +
-            "<li>Complete advanced analytical processes to determine critical business insights from datasets</li> " +
-            "<li>Prepare comprehensive and complex visualisations to gather insights, study trends and present insights to support critical business decisions</li> " +
-            "<li>Articulate and justify approaches, insights, and recommendations to inform business strategies</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course2week1"){
-        _popText = "<p></p><ol> " +
-            "<li>Describe how Python is used to support data analysis used for business decision-making</li> " +
-            "<li>Apply various data types, basic operators, Python functions, and control structures (if, for, while) and arguments to understand the data</li> " +
-            "<li>Explore the data structures, data types, tuples, lists, and sets to organise and group data</li> " +
-            "<li>Create variables and assign values to the variables (multiple assignments)</li> " +
-            "<li>Use Python to create dictionaries</li> " +
-            "<li>Describe how Python modules and packages are used to extend functionality to achieve objectives</li> " +
-            "<li>Modify an existing program</li> " +
-            "<li>Create and update a repository on GitHub</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course2week2"){
-        _popText = "<p></p><ol> " +
-            "<li>Import CSV data and wrangle data using Python operations\n</li> " +
-            "<li>Write codes to use Pandas operations such as reindexing, mapping, and sorting to explore and analyse data\n</li> " +
-            "<li>Create the fundamental data structures Series and DataFrame using Pandas\n</li> " +
-            "<li>Use Jupyter Notebook to perform Python operations and create a shareable interactive workbook\n</li> " +
-            "<li>Perform statistical computations such as mean, sum, and cumulative sum by writing codes using available functions as Pandas methods\n</li> " +
-            "<li>Describe stages in data management and expand on the analysis stage\n</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course2week3"){
-        _popText = "<p></p><ol> " +
-            "<li>Combine data using concat() and merge() to join columns and rows in a DataFrame</li> " +
-            "<li>Explore the groupby() mechanics in Python to group data and perform better analysis\n</li> " +
-            "<li>Explore data aggregation on the created groupby() objects for efficient computations</li> " +
-            "<li>Wrangle data using Pandas</li> " +
-            "<li>Apply() to transform data and write functions to clean data</li> " +
-            "<li>Use Python objects and functions for splitting, applying, and combining data</li> " +
-            "<li>Use anonymous functions and Lambda</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course2week4"){
-        _popText = "<p></p><ol> " +
-            "<li>Use Python plotting library to create a visualisation workflow</li> " +
-            "<li>Create and improve visualisations in Python leveraging design principles to identify and communicate insights</li> " +
-            "<li>Plot time series data using Seaborn to identify and analyse trends</li> " +
-            "<li>Customise plots using Seaborn and Matplotlib, including using custom colours, markers, and styles</li> " +
-            "<li>Export visualisations to file formats that can be shared</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course2week5"){
-        _popText = "<p></p><ol> " +
-            "<li>Use an API (e.g. Twitter) to access data</li> " +
-            "<li>Import data from various data formats and sources to gather a variety of insights</li> " +
-            "<li>Describe the structure of various data formats (JSON, HTML, XML etc.)</li> " +
-            "<li>Interact with databases such as SQL from database servers using Python</li> " +
-            "<li>Transform data into familiar formats (CSV or SQL)</li> " +
-            "<li>Wrangle data using Python operations</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course2week6"){
-        _popText = "<p></p><ol> " +
-            "<li>Utilise GitHub to manage code</li> " +
-            "<li>Perform business forecasting and create time-series models to inform business decision-making</li> " +
-            "<li>Articulate how to incorporate ethical practices when approaching Python</li> " +
-            "</ol>";
-    }
-    // Course 3
-    else if(aCourse =="course3"){
-        _popText = "<p></p><ol> " +
-            "<li>Apply predictive models to transform insights into actionable strategies to support business objectives\n</li> " +
-            "<li>Establish methodologies and develop a culture conducive to effective and ethical data-driven business practice</li> " +
-            "<li>Prepare advanced data visualisations and data stories to communicate compelling, guided narratives to effectively support business decision-making</li> " +
-            "<li>Solve business problems and justify strategic recommendations that leverage best practice and advanced data analysis approaches</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course3week1"){
-        _popText = "<p></p><ol> " +
-            "<li>Describe predictive analytics to forecast future performances and results from historical data for promoting growth in business</li> " +
-            "<li>Determine how predictive analytics adds validity to the findings for various use cases in specific organisational contexts</li> " +
-            "<li>Apply regression analysis techniques to interpret and estimate the effect of events within specific organisational contexts</li> " +
-            "<li>Solve a linear regression problem using the line of best fit to make inferences about parameters</li> " +
-            "<li>Create a regression model using Python and based on the results, make recommendations to inform business decision-making.</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course3week2"){
-        _popText = "<p></p><ol> " +
-            "<li>Describe how clustering and classification models are used to predict business outcomes.</li> " +
-            "<li>Perform data cleaning and transform variables to facilitate analysis for making predictions based on the available data.</li> " +
-            "<li>Create decision trees to classify data, make predictions, and inform decision-making.</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course3week3"){
-        _popText = "<p></p><ol> " +
-            "<li>Analyse customer sentiment provided in feedback surveys to identify affective information and derive insights from the data. </li> " +
-            "<li>Evaluate and select the appropriate models to analyse and detect the positive or negative sentiment in text-based comments such as reviews or social media content.</li> " +
-            "<li>Apply statistical models to conduct text analytics on a given set of data and extract topics from the content.</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course3week4"){
-        _popText = "<p></p><ol> " +
-            "<li>Connect and import data from a relational database using R</li> " +
-            "<li>Inspect clean data to identify variables and observations that inform the business problem</li> " +
-            "<li>Analyse data using the tidyverse R package</li> " +
-            "<li>Visualise data using the ggplot R package</li> " +            "</ol>";
-    }
-    else if(aCourse =="course3week5"){
-        _popText = "<p></p><ol> " +
-            "<li>Articulate and demonstrate the process to follow when approaching new and unfamiliar datasets</li> " +
-            "<li>Wrangle and manipulate data using libraries from the Tidyverse package such as dplyr and tidyr to structure the data in the desired format</li> " +
-            "<li>Reshape the structure and layout of data to manipulate, summarise, and join data sets</li> " +
-            "<li>Prepare visualisations for end-users (e.g. value displays on hover in a scatterplot)</li> " +
-            "</ol>";
-    }
-    else if(aCourse =="course3week6"){
-        _popText = "<p></p><ol> " +
-            "<li>Use R to perform predictive analytics</li> " +
-            "<li>Develop a business case for using advanced analytics to improve organisational performance</li> " +
-            "<li>Present your analysis to various stakeholders in the business</li> " +            "</ol>";
-    }
-    // Supporting Content
-    else if(aCourse =="supporting-content"){
-        _popText = "<p></p><ol> " +
-            "<li>Evaluate decisions effectively to ensure important inflexion points are weighed as objectively as possible </li> " +
-            "<li>Build a compelling personal brand to stand out to employers and recruiters</li> " +
-            "<li>Leverage leadership strategies and frameworks to manage and succeed in ambiguity</li> " +
-            "<li>Describe the role of networking in building an effective career progression strategy and demonstrate key networking skills</li> " +
-            "<li>Demonstrate career readiness through an effective and customised CV and portfolio, and interview preparation.</li> " +
-            "</ol>";
-    }
-    // Orientation
-    else if(aCourse =="orientation"){
-        _popText = "<p></p><ol> " +
-            "<li>Navigate the Career Accelerator platform to identify critical elements</li> " +
-            "<li>Create professional and personal development goals</li> " +
-            "<li>Apply reflective practices to develop self-leadership skills</li> " +
+            "<li>Navigate the Career Accelerator platform to identify critical elements.</li> " +
+            "<li>Create professional and personal development goals.</li> " +
+            "<li>Apply reflective practices to develop self-leadership skills. </li> " +
             "<li>Create a professional portfolio.</li> " +
             "</ol>";
     }
-    // Employer Project
-    else if(aCourse =="capstone1"){
+    else if (aCourse == "orientationWeek2") {
         _popText = "<p></p><ol> " +
-            "<li>Work collaboratively within a cross functional team to analyse and solve business problems, leveraging multidisciplinary approaches presented throughout the programme to maximise potential business value</li> " +
-            "<li>Demonstrate an understanding of the market or business context as well as any other publicly available research done in this area</li> " +
-            "<li>Utilise fit for purpose creative, critical thinking and problem solving approaches to create ethical and sustainable business solutions</li> " +
-            "<li>Effectively communicate business solutions and strategies through written and verbal channels</li> " +
+            "<li>Communicate with career coach and success manager to articulate learner goals and how to achieve them.</li> " +
+            "<li>Identify how to evaluate goal progression using tools and frameworks.</li> " +
+            "<li>Draft a goal attainment plan in consultation with a career coach/success manager.</li> " +
             "</ol>";
     }
-    else if(aCourse =="capstone1week1"){
+    // Course 1
+    else if (aCourse == "course1") {
         _popText = "<p></p><ol> " +
-            "<li>Describe the context of the employer project</li> " +
-            "<li>Evaluate approaches to stakeholder management within the context of organisational goals</li> " +
-            "<li>Complete market research and analysis to identify strategic opportunity</li> " +
-            "<li>Identify opportunities for products and/or services to contribute to strategic business performance</li> " +
-            "<li>Create a project plan detailing the scope, roles and responsibilities, phases and approaches in the context of organisational objectives and industry and market trends</li> " +
+            "<li>Critically analyse the various roles and stakeholders within the product development environment and their relationship to achieving successful product design and delivery.</li> " +
+            "<li>Evaluate product strategy and vision, and their relationship to organisational strategy and success.</li> " +
+            "<li>Conduct exploratory market research and user research to validate product hypotheses and inform competitor analyses.</li> " +
+            "<li>Identify, design and develop product concepts and user experiences to capitalise on opportunities based on specific organisational contexts.</li> " +
+            "<li>Adopt tailored communication strategies to manage varying stakeholders, requirements and product development phases.</li> " +
             "</ol>";
     }
-    else if(aCourse =="capstone1week2"){
+    else if (aCourse == "course1week1") {
         _popText = "<p></p><ol> " +
-            "<li>Generate novel and divergent ideas to solve problems </li> " +
-            "<li>Consolidate ideas and thoughts to generate useful ideas </li> " +
-            "<li>Validate assumptions/hypotheses by running experiments</li> " +
+            "<li>Evaluate the strategic importance of product management roles within specific organisational contexts. </li> " +
+            "<li>Compare and evaluate products by type and audience to inform decision-making.</li> " +
+            "<li>Categorise stakeholders using a power-interest matrix to communicate how different stakeholders contribute to a productâ€™s success.</li> " +
             "</ol>";
     }
-    else if(aCourse =="capstone1week3"){
+    else if (aCourse == "course1week2") {
         _popText = "<p></p><ol> " +
-            "<li>Articulate how effective communication supports business performance</li> " +
-            "<li>Evaluate whether written business communication has been effectively crafted for the audience/stakeholders</li> " +
-            "<li>Craft the business communication with a presentation pitching your ideas</li> " +
+            "<li>Analyse market research and trends to inform product strategy and positioning.</li> " +
+            "<li>Articulate product vision and mission to reflect the dynamic relationship between organisational strategy and product strategy.</li> " +
+            "<li>Articulate the value proposition for a product in a specific context.</li> " +
+            "<li>Formulate product goals that align to the broader organisational strategy.</li> " +
             "</ol>";
     }
-    else if(aCourse =="capstone1week4"){
+    else if (aCourse == "course1week3") {
         _popText = "<p></p><ol> " +
-            "<li>Discuss how diversity and inclusion support business performance</li> " +
-            "<li>Evaluate professional documentation to reflect consideration for diversity and inclusion</li> " +
+            "<li>Create an empathy map and user journey map to gain deeper insights into users.</li> " +
+            "<li>Apply the scientific method framework to inform user research and refine identified user needs.</li> " +
+            "<li>Create a user research strategy informed by quantitative and qualitative data to guide product development.</li> " +
+            "<li>Articulate and differentiate between user segments to inform product design.</li> " +
+            "<li>Design personas to represent identified user segments to  support product development.</li> " +
             "</ol>";
     }
-    else if(aCourse =="capstone1week5"){
+    else if (aCourse == "course1week4") {
         _popText = "<p></p><ol> " +
-            "<li>Articulate how scaffolding to strategic objectives and measuring progress demonstrate value to the business</li> " +
+            "<li>Develop a product hypothesis that addresses the most valuable user problems.</li> " +
+            "<li>Write problem statements to articulate user pain points.        </li> " +
+            "<li>Select and apply ideation strategies within specific organisational contexts to optimise continuous discovery throughout the product development cycle.</li> " +
+            "<li>Communicate product ideas to different audiences using a low-fidelity prototype.</li> " +
             "</ol>";
     }
-    else if(aCourse =="capstone1week6"){
+    else if (aCourse == "course1week5") {
         _popText = "<p></p><ol> " +
-            "<li>Prepare and present an industry-relevant project and recommendations that demonstrates how it will add value to the business</li> " +
+            "<li>Validate and refine product hypotheses using best practice evaluation methods.</li> " +
+            "<li>Create a risk management plan to evaluate and manage product risk.</li> " +
+            "<li>Write high-level user stories to communicate product requirements for a specific product feature.</li> " +
+            "<li>Identify success criteria and metrics to define an MVP that contributes to organisational and product goals.</li> " +
+            "<li>###</li> " +
             "</ol>";
     }
+    else if (aCourse == "course1week6") {
+        _popText = "<p></p><ol> " +
+            "<li>Develop effective concept tests to validate product ideas.</li> " +
+            "<li>Create a business case to gain buy-in for a product or feature proposal and respond to objections.</li> " +
+            "<li>Develop and present a pitch promoting your product idea.</li> " +
+            "</ol>";
+    }
+    // Course 2
     return _popText;
 }
+
+
+
+
 
 
 function initInlineQuiz() {
@@ -621,7 +454,7 @@ function initInlineQuiz() {
         $(".oes-feedback, .oes-feedback-correct, .oes-feedback-incorrect").css("opacity", 1),
             $(".oes-feedback, .oes-feedback-correct, .oes-feedback-incorrect").fadeOut(0),
             $(".oes-feedback, .oes-feedback-correct, .oes-feedback-incorrect, .oes-quiz-buttons .reset-button").hide(),
-        n.data("oes-quiz-setting-separator") && (a.separator = n.data("oes-quiz-setting-separator"));
+            n.data("oes-quiz-setting-separator") && (a.separator = n.data("oes-quiz-setting-separator"));
         var r = 0,
             s = 0,
             l = 0;
@@ -647,11 +480,11 @@ function initInlineQuiz() {
                     setTimeout(function () {
                         n.on("click", o.links.checkBtn, function () {
                             l <= 0 &&
-                            ($(this).hide(0),
-                                $("> .oes-feedback", n).show("slow"),
-                                $(".oes-quiz-question", n).length == $(".oes-correct", n).length
-                                    ? $(n).find("> .oes-feedback-correct").show("slow")
-                                    : $(".oes-quiz-question", n).length == $(".oes-correct", n).length + $(".oes-incorrect", n).length && $(n).find("> .oes-feedback-incorrect").show("slow")),
+                                ($(this).hide(0),
+                                    $("> .oes-feedback", n).show("slow"),
+                                    $(".oes-quiz-question", n).length == $(".oes-correct", n).length
+                                        ? $(n).find("> .oes-feedback-correct").show("slow")
+                                        : $(".oes-quiz-question", n).length == $(".oes-correct", n).length + $(".oes-incorrect", n).length && $(n).find("> .oes-feedback-incorrect").show("slow")),
                                 $(o.links.resetBtn, n).show(0),
                                 (l = 0);
                         });
@@ -697,22 +530,22 @@ function initInlineQuiz() {
                                 $(".oes-feedback, .oes-feedback-correct, .oes-feedback-incorrect", i).fadeOut(0),
                                 a.length == r ? ($(i).removeClass("oes-incorrect"), $(i).addClass("oes-correct")) : ($(i).removeClass("oes-correct"), $(i).addClass("oes-incorrect")),
                                 $("> .oes-feedback", $(":checked", i).parent()).fadeIn("slow"),
-                            $(i).hasClass("no-feedback") ||
-                            (a.parent().addClass("oes-mc-correct"),
-                                $(":checked:not(:checked.true)", i).parent().addClass("oes-mc-incorrect"),
-                                $(".true:not(:checked)", i).parent().addClass("oes-mc-missed"),
-                                $("> .oes-correct-feedback", $(".oes-mc-correct", i).parent()).fadeIn("slow"),
-                                $("> .oes-incorrect-feedback", $(".oes-mc-incorrect", i).parent()).fadeIn("slow"),
-                                $("> .oes-feedback, > .oes-feedback-correct, > .oes-feedback-incorrect", i).fadeOut(0),
-                                a.length == r
-                                    ? ($("> .oes-feedback, > .oes-feedback-correct", i).fadeIn("slow"), $("> .oes-feedback-incorrect", i).fadeOut(0))
-                                    : ($("> .oes-feedback, > .oes-feedback-incorrect", i).fadeIn("slow"), $("> .oes-feedback-correct", i).fadeOut(0)));
+                                $(i).hasClass("no-feedback") ||
+                                (a.parent().addClass("oes-mc-correct"),
+                                    $(":checked:not(:checked.true)", i).parent().addClass("oes-mc-incorrect"),
+                                    $(".true:not(:checked)", i).parent().addClass("oes-mc-missed"),
+                                    $("> .oes-correct-feedback", $(".oes-mc-correct", i).parent()).fadeIn("slow"),
+                                    $("> .oes-incorrect-feedback", $(".oes-mc-incorrect", i).parent()).fadeIn("slow"),
+                                    $("> .oes-feedback, > .oes-feedback-correct, > .oes-feedback-incorrect", i).fadeOut(0),
+                                    a.length == r
+                                        ? ($("> .oes-feedback, > .oes-feedback-correct", i).fadeIn("slow"), $("> .oes-feedback-incorrect", i).fadeOut(0))
+                                        : ($("> .oes-feedback, > .oes-feedback-incorrect", i).fadeIn("slow"), $("> .oes-feedback-correct", i).fadeOut(0)));
                         } else l++;
                     }
                     l <= 0 && $(this).hide(0), $(o.links.resetBtn, n).show(0);
                 }
             }),
-        o.mc_questions.length > 0 && $(o.links.checkBtn, n).show(0),
+            o.mc_questions.length > 0 && $(o.links.checkBtn, n).show(0),
             $(o.links.tr, n).each(function () {
                 var e = $(this);
                 (s = 0),
@@ -761,12 +594,12 @@ function initInlineQuiz() {
                                     })
                                     .before("<div class='oes-feedback-context'>Your response:</div>")
                                 : r
-                                ? h.prop("disabled", "disable").filter(function () {
-                                    return !$(this).prev().hasClass("oes-feedback-context");
-                                })
-                                : (l++,
-                                n.find(".oes-quiz-textresponse").hasClass("no-blanks") &&
-                                (h.after("<span class='oes-feedback-incorrect'>This response is empty.</span>"), h.parent().find("span.oes-feedback-incorrect").css("opacity", 1).fadeIn()));
+                                    ? h.prop("disabled", "disable").filter(function () {
+                                        return !$(this).prev().hasClass("oes-feedback-context");
+                                    })
+                                    : (l++,
+                                        n.find(".oes-quiz-textresponse").hasClass("no-blanks") &&
+                                        (h.after("<span class='oes-feedback-incorrect'>This response is empty.</span>"), h.parent().find("span.oes-feedback-incorrect").css("opacity", 1).fadeIn()));
                         }
                         if (l <= 0) {
                             if ($(".oes-response-output", a).length > 0)
@@ -784,7 +617,7 @@ function initInlineQuiz() {
                     l <= 0 && $(this).hide(0), $(o.links.resetBtn, n).show(0);
                 }
             }),
-        o.tr_questions.length > 0 && $(o.links.checkBtn, n).show(0),
+            o.tr_questions.length > 0 && $(o.links.checkBtn, n).show(0),
             $(o.links.fib, n).each(function () {
                 s = 0;
                 var e = $(this);
@@ -794,17 +627,17 @@ function initInlineQuiz() {
                     e.attr("id", "oes-fibtf-q" + r), e.addClass(o.links.fibtf.replace(/\./g, ""));
                     for (var i = 0, n = t.length; i < n; i++) {
                         var l = t[i]
-                                .toString()
-                                .replace(/&nbsp;/g, " ")
-                                .replace("}", "")
-                                .replace("{", "")
-                                .split(a.separator)
-                                .map(function (e) {
-                                    return e.trim();
-                                })
-                                .sort(function (e, t) {
-                                    return t.length - e.length;
-                                }),
+                            .toString()
+                            .replace(/&nbsp;/g, " ")
+                            .replace("}", "")
+                            .replace("{", "")
+                            .split(a.separator)
+                            .map(function (e) {
+                                return e.trim();
+                            })
+                            .sort(function (e, t) {
+                                return t.length - e.length;
+                            }),
                             c = "<input id='oes-fibtf-q" + r + "s" + i + "' size='" + l[0].length + "' type='textfield' data-oes-answers='" + l.join(a.separator) + "'></input>";
                         e.html(e.html().replace(t[i], c));
                     }
@@ -836,18 +669,18 @@ function initInlineQuiz() {
                                     h.prop("disabled", "disable"), h.addClass("oes-fibtf-checked");
                                     for (
                                         var p = h
-                                                .data("oes-answers")
-                                                .toString()
-                                                .replace(/&nbsp;/g, " ")
-                                                .replace("}", "")
-                                                .replace("{", "")
-                                                .split(a.separator)
-                                                .map(function (e) {
-                                                    return e.trim();
-                                                }),
-                                            g = !0,
-                                            m = h,
-                                            v = $.inArray(h.val().toString().toLowerCase().trim(), p) >= 0 ? ".oes-feedback, .oes-feedback-correct" : ".oes-feedback, .oes-feedback-incorrect";
+                                            .data("oes-answers")
+                                            .toString()
+                                            .replace(/&nbsp;/g, " ")
+                                            .replace("}", "")
+                                            .replace("{", "")
+                                            .split(a.separator)
+                                            .map(function (e) {
+                                                return e.trim();
+                                            }),
+                                        g = !0,
+                                        m = h,
+                                        v = $.inArray(h.val().toString().toLowerCase().trim(), p) >= 0 ? ".oes-feedback, .oes-feedback-correct" : ".oes-feedback, .oes-feedback-incorrect";
                                         g;
 
                                     )
@@ -864,12 +697,12 @@ function initInlineQuiz() {
                         e == tempNumCorrect && e == tempNumIncorrect + tempNumCorrect
                             ? (s.removeClass("oes-incorrect"), s.addClass("oes-correct"))
                             : e > 0 && e > tempNumCorrect && e == tempNumIncorrect + tempNumCorrect && (s.removeClass("oes-correct"), s.addClass("oes-incorrect")),
-                        r <= 0 && (tempNumIncorrect <= 0 ? $(".oes-feedback, .oes-feedback-correct", s).show("slow") : $(".oes-feedback, .oes-feedback-incorrect", s).show("slow"));
+                            r <= 0 && (tempNumIncorrect <= 0 ? $(".oes-feedback, .oes-feedback-correct", s).show("slow") : $(".oes-feedback, .oes-feedback-incorrect", s).show("slow"));
                     }
                     l <= 0 && $(this).hide(0), $(o.links.resetBtn, n).show(0);
                 }
             }),
-        o.fibtf_questions.length > 0 && $(o.links.checkBtn, n).show(0),
+            o.fibtf_questions.length > 0 && $(o.links.checkBtn, n).show(0),
             $(o.links.fib, n).each(function () {
                 s = 0;
                 var i = $(this),
@@ -905,17 +738,17 @@ function initInlineQuiz() {
                                     $(".oes-feedback" + s + ", .oes-feedback-incorrect" + s, $(i)).fadeOut(0),
                                     e.addClass("oes-fib-selected"),
                                     $("#oes-feedback-" + a).remove(),
-                                $(this).parent().hasClass("no-feedback") ||
-                                (t.hasClass("true")
-                                    ? (e.after("<span id='oes-feedback-" + a + "' class='oes-feedback-correct oes-feedback-context'>&#x2713;</span>"),
-                                        $(".oes-feedback" + s + ", .oes-feedback-correct" + s, $(i)).fadeIn("slow"),
-                                        e.removeClass("oes-fib-incorrect"),
-                                        e.addClass("oes-fib-correct"))
-                                    : (e.after("<span id='oes-feedback-" + a + "' class='oes-feedback-incorrect oes-feedback-context'>&#x274c;&nbsp;" + r + "</span>"),
-                                        $(".oes-feedback" + s + ", .oes-feedback-incorrect" + s, $(i)).fadeIn("slow"),
-                                        e.removeClass("oes-fib-correct"),
-                                        e.addClass("oes-fib-incorrect")));
-                                for (var d = !0, u = e, h = t.hasClass("true") ? ".oes-feedback, .oes-feedback-correct" : ".oes-feedback, .oes-feedback-incorrect"; d; )
+                                    $(this).parent().hasClass("no-feedback") ||
+                                    (t.hasClass("true")
+                                        ? (e.after("<span id='oes-feedback-" + a + "' class='oes-feedback-correct oes-feedback-context'>&#x2713;</span>"),
+                                            $(".oes-feedback" + s + ", .oes-feedback-correct" + s, $(i)).fadeIn("slow"),
+                                            e.removeClass("oes-fib-incorrect"),
+                                            e.addClass("oes-fib-correct"))
+                                        : (e.after("<span id='oes-feedback-" + a + "' class='oes-feedback-incorrect oes-feedback-context'>&#x274c;&nbsp;" + r + "</span>"),
+                                            $(".oes-feedback" + s + ", .oes-feedback-incorrect" + s, $(i)).fadeIn("slow"),
+                                            e.removeClass("oes-fib-correct"),
+                                            e.addClass("oes-fib-incorrect")));
+                                for (var d = !0, u = e, h = t.hasClass("true") ? ".oes-feedback, .oes-feedback-correct" : ".oes-feedback, .oes-feedback-incorrect"; d;)
                                     u.next().is(".oes-feedback, .oes-feedback-incorrect, .oes-feedback-correct") ? (u.next().is(h) ? u.next().fadeOut(0).css("opacity", 1).fadeIn("slow") : u.next().fadeOut(0), (u = u.next())) : (d = !1);
                             } else e.removeClass("oes-fib-selected"), e.removeClass("oes-fib-correct"), e.removeClass("oes-fib-incorrect");
                             (tempNumTotal = $("select", i).length),
@@ -995,7 +828,7 @@ function initInlineQuiz() {
                                     f.hasClass("true")
                                         ? (h.after("<span id='oes-feedback-" + p + "' class='oes-feedback-correct'>&#x2713;</span>"), $(".oes-feedback" + m + ", .oes-feedback-correct" + m, $(c)).fadeIn("slow"), t++)
                                         : (h.after("<span id='oes-feedback-" + p + "' class='oes-feedback-incorrect'>&#x274c;&nbsp;" + g + "</span>"), $(".oes-feedback" + m + ", .oes-feedback-incorrect" + m, $(c)).fadeIn("slow"), i++);
-                                for (var v = !0, b = h, y = f.hasClass("true") ? ".oes-feedback, .oes-feedback-correct" : ".oes-feedback, .oes-feedback-incorrect"; v; )
+                                for (var v = !0, b = h, y = f.hasClass("true") ? ".oes-feedback, .oes-feedback-correct" : ".oes-feedback, .oes-feedback-incorrect"; v;)
                                     b.next().is(".oes-feedback, .oes-feedback-incorrect, .oes-feedback-correct") ? (b.next().is(y) && b.next().fadeOut(0).css("opacity", 1).fadeIn("slow"), (b = b.next())) : (v = !1);
                             }
                         }
@@ -1007,7 +840,7 @@ function initInlineQuiz() {
                     }
                 o.match_questions.length > 0 && (l <= 0 && $(this).hide(0), $(o.links.resetBtn, n).show(0));
             }),
-        o.match_questions.length > 0 && $(o.links.checkBtn, n).show(0),
+            o.match_questions.length > 0 && $(o.links.checkBtn, n).show(0),
             (o.links.checklist = ".oes-quiz-checklist"),
             (o.checklist_questions = []),
             $(o.links.checklist, n).each(function () {
@@ -1063,34 +896,34 @@ function initInlineQuiz() {
             }),
             e++;
     }),
-    jQuery.isFunction($.fn.shuffle) ||
-    ($.fn.shuffle = function () {
-        $.each(this.get(), function (e, t) {
-            var i = $(t),
-                n = i.children();
-            n.sort(function () {
-                return 0.5 - Math.random();
-            }),
-                i.empty(),
-                n.appendTo(i);
-        });
-    }),
+        jQuery.isFunction($.fn.shuffle) ||
+        ($.fn.shuffle = function () {
+            $.each(this.get(), function (e, t) {
+                var i = $(t),
+                    n = i.children();
+                n.sort(function () {
+                    return 0.5 - Math.random();
+                }),
+                    i.empty(),
+                    n.appendTo(i);
+            });
+        }),
         $(".oes-shuffle").shuffle();
 }
+initInlineQuiz();
 
-
-function initTab(){
+function initTab() {
     var acc = document.getElementsByClassName("accordion-demo");
     var i;
     for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function(){
+        acc[i].addEventListener("click", function () {
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
             panel.classList.remove("open");
-            if (panel.style.maxHeight){
+            if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;
                 panel.classList.remove("open");
-            }else{
+            } else {
                 panel.classList.add("open");
                 panel.style.maxHeight = panel.scrollHeight + "px";
             }
@@ -1143,34 +976,34 @@ if (allPageImages.length > 0) {
 let zoomActivated = false;
 
 window.addEventListener('keydown', (e) => {
-	if(e.key === 'z') {
-		zoomActivated = !zoomActivated;
-	}
+    if(e.key === 'z') {
+        zoomActivated = !zoomActivated;
+    }
 });
 
 window.addEventListener('mousemove', (e) => {
-	const { clientX: x, clientY: y } = e;
+    const { clientX: x, clientY: y } = e;
 
-	if(zoomActivated) {
-		body.style.transform = 'scale(2)';
-		body.style.transformOrigin = `${x}px ${y}px`;
-	} else {
-		body.style.transform = 'none';
-	}
+    if(zoomActivated) {
+        body.style.transform = 'scale(2)';
+        body.style.transformOrigin = `${x}px ${y}px`;
+    } else {
+        body.style.transform = 'none';
+    }
 });*/
 
 
 // ******************************* POPUP BLOCK ******************************* //
 ///popup code block
 var trigger = document.getElementById('popup');
-if(trigger){
+if (trigger) {
     var href = trigger.href;
     window.name = 'parent';
-    function popup(){
+    function popup() {
         var pop = window.open(href, 'popup', 'menubar=no, status=no, scrollbars=no, menubar=no, width=800, height=800');
         pop.focus();
     }
-    trigger.addEventListener('click', function(e) {
+    trigger.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
         popup();
@@ -1185,8 +1018,8 @@ var modal = document.getElementById("myModal");
 var img = document.getElementById("myImg");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
-if(img){
-    img.onclick = function(){
+if (img) {
+    img.onclick = function () {
         modal.style.display = "block";
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
@@ -1197,8 +1030,8 @@ if(img){
 var span = document.getElementsByClassName("close")[0];
 // When the user clicks on <span> (x), close the modal
 
-if(span){
-    span.onclick = function() {
+if (span) {
+    span.onclick = function () {
         modal.style.display = "none";
     }
 }
@@ -1218,19 +1051,19 @@ function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    console.log(slides[slideIndex-1]);
-    if(slides[slideIndex-1] != "undefined"){
-        slides[slideIndex-1].style.display = "block";
+    console.log(slides[slideIndex - 1]);
+    if (slides[slideIndex - 1] != "undefined") {
+        slides[slideIndex - 1].style.display = "block";
     }
-    dots[slideIndex-1].className += " active";
+    dots[slideIndex - 1].className += " active";
 }
 function myFunction() {
     var dots = document.getElementsByClassName("dots");
@@ -1250,9 +1083,9 @@ function myFunction() {
 //document.getElementsByClassName("show-more-button").addEventListener("click", function() {
 //document.addEventListener('DOMContentLoaded', () => {
 
-document.querySelector('.show-more-button').addEventListener('click', function() {
+document.querySelector('.show-more-button').addEventListener('click', function () {
     // If text is shown less, then show complete
-    if(this.getAttribute('data-more') == 0) {
+    if (this.getAttribute('data-more') == 0) {
         this.setAttribute('data-more', 1);
         this.style.display = 'block';
         this.innerHTML = 'Read Less';
@@ -1261,7 +1094,7 @@ document.querySelector('.show-more-button').addEventListener('click', function()
         this.previousElementSibling.previousElementSibling.style.display = 'inline';
     }
     // If text is shown complete, then show less
-    else if(this.getAttribute('data-more') == 1) {
+    else if (this.getAttribute('data-more') == 1) {
         this.setAttribute('data-more', 0);
         this.style.display = 'inline';
         this.innerHTML = 'Read More';
@@ -1346,9 +1179,6 @@ function h5pIframeHeight() {
 
 h5pIframeHeight();
 window.addEventListener("message", receiveMessage, false);
-
-
-
 
 
 
