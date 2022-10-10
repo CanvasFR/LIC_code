@@ -843,19 +843,23 @@ td {
 }
 
 code {
-    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-     !important;
-    font-size: 16px;
-     !important;
-    color: #000280;
-     !important;
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace !important;
+    font-size: 16px !important;
+    color: #000280 !important;
 }
 
-code,
 pre {
-    border-radius: 3px !important;
+    /* border-radius: 3px !important;
     border: 0 !important;
-    padding: .125rem .25rem;
+    padding: .125rem .25rem; */
+    color: #797979;
+    display: block;
+    padding: 20px !important;
+    margin: 0;
+    word-break: break-all;
+    word-wrap: break-word;
+    border: 1px solid #C6CDD1 !important;
+    line-height: 1.4;
 }
 
 .pages.show .show-content pre {
